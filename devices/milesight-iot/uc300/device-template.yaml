@@ -239,18 +239,18 @@ definition:
       - key: sniffer_config.sniffer_interval
         type: long
         entity_mapping: sniffer_config.sniffer_interval
-      - key: gpio_output_2_time
-        type: long
-        entity_mapping: gpio_output_2_time.gpio_output_2_time
-      - key: gpio_output_2
-        type: boolean
-        entity_mapping: gpio_output_2_time.gpio_output_2
-      - key: gpio_output_1_time
-        type: long
-        entity_mapping: gpio_output_1_time.gpio_output_1_time
       - key: gpio_output_1
         type: boolean
-        entity_mapping: gpio_output_1_time.gpio_output_1
+        entity_mapping: gpio_output_1
+      - key: gpio_output_2
+        type: boolean
+        entity_mapping: gpio_output_2
+      - key: gpio_output_1_control.status
+        type: long
+        entity_mapping: gpio_output_1
+      - key: gpio_output_2_control.status
+        type: long
+        entity_mapping: gpio_output_2
   output:
     type: object
     properties:
@@ -377,18 +377,24 @@ definition:
       - key: sniffer_config.sniffer_interval
         type: long
         entity_mapping: sniffer_config.sniffer_interval
-      - key: gpio_output_2_time
-        type: long
-        entity_mapping: gpio_output_2_time.gpio_output_2_time
-      - key: gpio_output_2
-        type: boolean
-        entity_mapping: gpio_output_2_time.gpio_output_2
-      - key: gpio_output_1_time
-        type: long
-        entity_mapping: gpio_output_1_time.gpio_output_1_time
       - key: gpio_output_1
         type: boolean
-        entity_mapping: gpio_output_1_time.gpio_output_1
+        entity_mapping: gpio_output_1
+      - key: gpio_output_2
+        type: boolean
+        entity_mapping: gpio_output_2
+      - key: gpio_output_1_control.status
+        type: long
+        entity_mapping: gpio_output_1_control.status
+      - key: gpio_output_1_control.duration
+        type: long
+        entity_mapping: gpio_output_1_control.duration
+      - key: gpio_output_2_control.status
+        type: long
+        entity_mapping: gpio_output_2_control.status
+      - key: gpio_output_2_control.duration
+        type: long
+        entity_mapping: gpio_output_2_control.duration
 initial_entities:
   - name: IPSO Version
     type: property
@@ -438,7 +444,7 @@ initial_entities:
     attributes:
       max_length: 16
     identifier: sn
-  - name: GPIO Input (Channel 1)
+  - name: GPIO Input 1
     type: property
     access_mod: R
     value_type: boolean
@@ -447,7 +453,7 @@ initial_entities:
         'false': low
         'true': high
     identifier: gpio_input_1
-  - name: GPIO Input (Channel 2)
+  - name: GPIO Input 2
     type: property
     access_mod: R
     value_type: boolean
@@ -456,7 +462,7 @@ initial_entities:
         'false': low
         'true': high
     identifier: gpio_input_2
-  - name: GPIO Input (Channel 3)
+  - name: GPIO Input 3
     type: property
     access_mod: R
     value_type: boolean
@@ -465,7 +471,7 @@ initial_entities:
         'false': low
         'true': high
     identifier: gpio_input_3
-  - name: GPIO Input (Channel 4)
+  - name: GPIO Input 4
     type: property
     access_mod: R
     value_type: boolean
@@ -474,22 +480,22 @@ initial_entities:
         'false': low
         'true': high
     identifier: gpio_input_4
-  - name: GPIO Counter (Channel 1)
+  - name: GPIO Counter 1
     type: property
     access_mod: R
     value_type: long
     identifier: gpio_counter_1
-  - name: GPIO Counter (Channel 2)
+  - name: GPIO Counter 2
     type: property
     access_mod: R
     value_type: long
     identifier: gpio_counter_2
-  - name: GPIO Counter (Channel 3)
+  - name: GPIO Counter 3
     type: property
     access_mod: R
     value_type: long
     identifier: gpio_counter_3
-  - name: GPIO Counter (Channel 4)
+  - name: GPIO Counter 4
     type: property
     access_mod: R
     value_type: long
@@ -898,42 +904,60 @@ initial_entities:
         attributes:
           unit: ms
         identifier: sniffer_interval
-  - identifier: gpio_output_2_time
-    name: GPIO Output (Channel 2) Time
+  - identifier: gpio_output_1
+    name: GPIO Output 1
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': low
+        'true': high
+  - identifier: gpio_output_2
+    name: GPIO Output 2
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': low
+        'true': high
+  - identifier: gpio_output_1_control
+    name: GPIO Output 1 Time Control
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: GPIO Output (Channel 2) Time
+      - name: GPIO Output 1 Time Control Duration
         value_type: long
         attributes:
           unit: ms
-        identifier: gpio_output_2_time
-      - name: GPIO Output (Channel 2)
+        identifier: duration
+      - name: GPIO Output 1 Time Control Status
         value_type: boolean
         attributes:
           enum:
             'false': low
             'true': high
-        identifier: gpio_output_2
-  - identifier: gpio_output_1_time
-    name: GPIO Output (Channel 1) Time
+        identifier: status
+  - identifier: gpio_output_2_control
+    name: GPIO Output 2 Time Control
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: GPIO Output (Channel 1) Time
+      - name: GPIO Output 2 Time Control Duration
         value_type: long
         attributes:
           unit: ms
-        identifier: gpio_output_1_time
-      - name: GPIO Output (Channel 1)
+        identifier: duration
+      - name: GPIO Output 2 Time Control Status
         value_type: boolean
         attributes:
           enum:
             'false': low
             'true': high
-        identifier: gpio_output_1
+        identifier: status
 codec:
   id: default
   ref: uc300/codec/device-codec.yaml
