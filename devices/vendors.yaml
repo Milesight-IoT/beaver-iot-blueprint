@@ -3,3 +3,7 @@ vendors:
     name: Milesight IoT
     work_dir: devices/milesight-iot
     model_index: models.yaml
+  - id: the-real-vutility
+    name: The Real VUtility
+    work_dir: devices/the-real-vutility
+    model_index: models.yaml

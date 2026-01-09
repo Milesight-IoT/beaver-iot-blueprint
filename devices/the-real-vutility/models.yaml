@@ -1,0 +1,4 @@
+models:
+  - id: hotdrop
+    name: HotDrop
+    template: hotdrop/device-template.yaml

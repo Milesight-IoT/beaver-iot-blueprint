@@ -1,0 +1,64 @@
+metadata:
+  lora_device_profile_class: ClassC-OTAA
+definition:
+  input:
+    type: object
+    properties:
+      - key: device_id
+        type: string
+        required: true
+        is_device_id: true
+      - key: ampHourAccumulation
+        type: double
+        entity_mapping: ampHourAccumulation
+      - key: averageAmps
+        type: double
+        entity_mapping: averageAmps
+      - key: maximumAmps
+        type: double
+        entity_mapping: maximumAmps
+      - key: minimumAmps
+        type: double
+        entity_mapping: minimumAmps
+      - key: capacitorVoltage
+        type: double
+        entity_mapping: capacitorVoltage
+      - key: temperatureCelsius
+        type: double
+        entity_mapping: temperatureCelsius
+initial_entities:
+  - name: Amp Hour Accumulation
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: ampHourAccumulation
+  - name: Average Amps
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: averageAmps
+  - name: Maximum Amps
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: maximumAmps
+  - name: Minimum Amps
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: minimumAmps
+  - name: Capacitor Voltage
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: capacitorVoltage
+  - name: Temperature Celsius
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: temperatureCelsius
+codec:
+  id: default
+  ref: hotdrop/codec/device-codec.yaml
