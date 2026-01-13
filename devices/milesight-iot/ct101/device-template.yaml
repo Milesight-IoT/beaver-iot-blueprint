@@ -36,16 +36,16 @@ definition:
         type: double
         entity_mapping: total_current
       - key: current
-        type: long
+        type: double
         entity_mapping: current
       - key: current_sensor_status
         type: long
         entity_mapping: current_sensor_status
       - key: current_max
-        type: long
+        type: double
         entity_mapping: current_max
       - key: current_min
-        type: long
+        type: double
         entity_mapping: current_min
       - key: current_alarm.current_threshold_alarm
         type: boolean
@@ -219,7 +219,7 @@ initial_entities:
   - name: Current
     type: property
     access_mod: R
-    value_type: long
+    value_type: double
     attributes:
       unit: A
     identifier: current
@@ -236,14 +236,14 @@ initial_entities:
   - name: Current Max
     type: property
     access_mod: R
-    value_type: long
+    value_type: double
     attributes:
       unit: A
     identifier: current_max
   - name: Current Min
     type: property
     access_mod: R
-    value_type: long
+    value_type: double
     attributes:
       unit: A
     identifier: current_min
@@ -358,10 +358,10 @@ initial_entities:
             '4': outside
         identifier: condition
       - name: Current Threshold Alarm Config (Min Threshold)
-        value_type: long
+        value_type: double
         identifier: threshold_min
       - name: Current Threshold Alarm Config (Max Threshold)
-        value_type: long
+        value_type: double
         identifier: threshold_max
       - name: Current Threshold Alarm Config (Alarm Interval)
         value_type: long
