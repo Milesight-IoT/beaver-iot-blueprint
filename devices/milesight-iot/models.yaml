@@ -17,6 +17,12 @@ models:
   - id: am107
     name: AM107
     template: am107/device-template.yaml
+  - id: am304l
+    name: AM304L
+    template: am304l/device-template.yaml
+  - id: am305l
+    name: AM305L
+    template: am305l/device-template.yaml
   - id: am307
     name: AM307
     template: am307/device-template.yaml
@@ -50,21 +56,39 @@ models:
   - id: ct101
     name: CT101
     template: ct101/device-template.yaml
+  - id: ct101_v2
+    name: CT101 V2
+    template: ct101_v2/device-template.yaml
   - id: ct103
     name: CT103
     template: ct103/device-template.yaml
+  - id: ct103_v2
+    name: CT103 V2
+    template: ct103_v2/device-template.yaml
   - id: ct105
     name: CT105
     template: ct105/device-template.yaml
+  - id: ct105_v2
+    name: CT105 V2
+    template: ct105_v2/device-template.yaml
   - id: ct303
     name: CT303
     template: ct303/device-template.yaml
+  - id: ct303_v2
+    name: CT303 V2
+    template: ct303_v2/device-template.yaml
   - id: ct305
     name: CT305
     template: ct305/device-template.yaml
+  - id: ct305_v2
+    name: CT305 V2
+    template: ct305_v2/device-template.yaml
   - id: ct310
     name: CT310
     template: ct310/device-template.yaml
+  - id: ct310_v2
+    name: CT310 V2
+    template: ct310_v2/device-template.yaml
   - id: ds3604
     name: DS3604
     template: ds3604/device-template.yaml
@@ -158,9 +182,15 @@ models:
   - id: ts301
     name: TS301
     template: ts301/device-template.yaml
+  - id: ts301_v2
+    name: TS301 V2
+    template: ts301_v2/device-template.yaml
   - id: ts302
     name: TS302
     template: ts302/device-template.yaml
+  - id: ts302_v2
+    name: TS302 V2
+    template: ts302_v2/device-template.yaml
   - id: uc11_n1
     name: UC11-N1
     template: uc11_n1/device-template.yaml
@@ -269,12 +299,21 @@ models:
   - id: ws501
     name: WS501
     template: ws501/device-template.yaml
+  - id: ws501_v4
+    name: WS501 V4
+    template: ws501_v4/device-template.yaml
   - id: ws502
     name: WS502
     template: ws502/device-template.yaml
+  - id: ws502_v4
+    name: WS502 V4
+    template: ws502_v4/device-template.yaml
   - id: ws503
     name: WS503
     template: ws503/device-template.yaml
+  - id: ws503_v4
+    name: WS503 V4
+    template: ws503_v4/device-template.yaml
   - id: ws501_3w_w11
     name: WS501(3W-EU)
     template: ws501_3w_w11/device-template.yaml
@@ -300,7 +339,7 @@ models:
     name: WS515
     template: ws515/device-template.yaml
   - id: ws513_w11
-    name: WS513(W11)
+    name: WS513
     template: ws513_w11/device-template.yaml
   - id: ws523
     name: WS523
@@ -314,6 +353,9 @@ models:
   - id: wt101
     name: WT101
     template: wt101/device-template.yaml
+  - id: wt102
+    name: WT102
+    template: wt102/device-template.yaml
   - id: wt201
     name: WT201
     template: wt201/device-template.yaml
@@ -338,3 +380,6 @@ models:
   - id: wts506
     name: WTS506
     template: wts506/device-template.yaml
+  - id: wt401
+    name: WT401
+    template: wt401/device-template.yaml

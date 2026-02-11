@@ -8,6 +8,18 @@ definition:
         type: string
         required: true
         is_device_id: true
+      - key: product_sn
+        type: string
+        entity_mapping: product_sn
+      - key: version.hardware_version
+        type: string
+        entity_mapping: version.hardware_version
+      - key: version.firmware_version
+        type: string
+        entity_mapping: version.firmware_version
+      - key: oem_id
+        type: string
+        entity_mapping: oem_id
       - key: ipso_version
         type: string
         entity_mapping: ipso_version
@@ -194,15 +206,6 @@ definition:
       - key: target_temperature_range_config.max
         type: double
         entity_mapping: target_temperature_range_config.max
-      - key: temperature_level_up_condition.type
-        type: long
-        entity_mapping: temperature_level_up_condition.type
-      - key: temperature_level_up_condition.time
-        type: long
-        entity_mapping: temperature_level_up_condition.time
-      - key: temperature_level_up_condition.temperature_control_tolerance
-        type: double
-        entity_mapping: temperature_level_up_condition.temperature_control_tolerance
       - key: temperature_level_up_down_delta.delta_1
         type: double
         entity_mapping: temperature_level_up_down_delta.delta_1
@@ -443,12 +446,6 @@ definition:
       - key: temperature_control_forbidden_config.auto_enable
         type: boolean
         entity_mapping: temperature_control_forbidden_config.auto_enable
-      - key: dual_temperature_tolerance.heat_tolerance
-        type: double
-        entity_mapping: dual_temperature_tolerance.heat_tolerance
-      - key: dual_temperature_tolerance.cool_tolerance
-        type: double
-        entity_mapping: dual_temperature_tolerance.cool_tolerance
       - key: target_temperature_dual_enable
         type: boolean
         entity_mapping: target_temperature_dual_enable
@@ -554,15 +551,6 @@ definition:
       - key: target_temperature_range_config.max
         type: double
         entity_mapping: target_temperature_range_config.max
-      - key: temperature_level_up_condition.type
-        type: long
-        entity_mapping: temperature_level_up_condition.type
-      - key: temperature_level_up_condition.time
-        type: long
-        entity_mapping: temperature_level_up_condition.time
-      - key: temperature_level_up_condition.temperature_control_tolerance
-        type: double
-        entity_mapping: temperature_level_up_condition.temperature_control_tolerance
       - key: temperature_level_up_down_delta.delta_1
         type: double
         entity_mapping: temperature_level_up_down_delta.delta_1
@@ -803,12 +791,6 @@ definition:
       - key: temperature_control_forbidden_config.auto_enable
         type: boolean
         entity_mapping: temperature_control_forbidden_config.auto_enable
-      - key: dual_temperature_tolerance.heat_tolerance
-        type: double
-        entity_mapping: dual_temperature_tolerance.heat_tolerance
-      - key: dual_temperature_tolerance.cool_tolerance
-        type: double
-        entity_mapping: dual_temperature_tolerance.cool_tolerance
       - key: target_temperature_dual_enable
         type: boolean
         entity_mapping: target_temperature_dual_enable
@@ -816,6 +798,36 @@ definition:
         type: long
         entity_mapping: current_temperature_control_mode
 initial_entities:
+  - name: Product SN
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 16
+    identifier: product_sn
+  - identifier: version
+    name: Hardware Version
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Hardware Version
+        value_type: string
+        attributes:
+          max_length: 6
+        identifier: hardware_version
+      - name: Firmware Version
+        value_type: string
+        attributes:
+          max_length: 16
+        identifier: firmware_version
+  - name: OEM ID
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 2
+    identifier: oem_id
   - name: IPSO Version
     type: property
     access_mod: R
@@ -1003,7 +1015,7 @@ initial_entities:
     access_mod: RW
     value_type: double
     attributes:
-      unit: '%r.h.'
+      unit: '%RH'
     identifier: humidity
   - identifier: wires_relay
     name: Wires Relay (Y1)
@@ -1363,7 +1375,7 @@ initial_entities:
       - name: Humidity Calibration Humidity
         value_type: double
         attributes:
-          unit: '%r.h.'
+          unit: '%RH'
         identifier: calibration_value
   - identifier: temperature_tolerance
     name: Target Temperature Tolerance
@@ -1415,29 +1427,6 @@ initial_entities:
         attributes:
           unit: °C
         identifier: max
-  - identifier: temperature_level_up_condition
-    name: Temperature Level Up Condition Type
-    type: property
-    access_mod: RW
-    value_type: object
-    children:
-      - name: Temperature Level Up Condition Type
-        value_type: long
-        attributes:
-          enum:
-            '0': heat
-            '1': cool
-        identifier: type
-      - name: Temperature Level Up Condition Time
-        value_type: long
-        attributes:
-          unit: min
-        identifier: time
-      - name: Temperature Level Up Condition Temperature Control Tolerance
-        value_type: double
-        attributes:
-          unit: °C
-        identifier: temperature_control_tolerance
   - identifier: temperature_level_up_down_delta
     name: Temperature Level Up Down (Delta 1)
     type: property
@@ -1502,12 +1491,12 @@ initial_entities:
       - name: Humidity Range (Min)
         value_type: long
         attributes:
-          unit: '%r.h.'
+          unit: '%RH'
         identifier: min
       - name: Humidity Range (Max)
         value_type: long
         attributes:
-          unit: '%r.h.'
+          unit: '%RH'
         identifier: max
   - identifier: temperature_dehumidify
     name: Temperature Dehumidify (Enable)
@@ -2120,18 +2109,6 @@ initial_entities:
             'false': disable
             'true': enable
         identifier: auto_enable
-  - identifier: dual_temperature_tolerance
-    name: Dual Temperature Tolerance (Heat Tolerance)
-    type: property
-    access_mod: RW
-    value_type: object
-    children:
-      - name: Dual Temperature Tolerance (Heat Tolerance)
-        value_type: double
-        identifier: heat_tolerance
-      - name: Dual Temperature Tolerance (Cool Tolerance)
-        value_type: double
-        identifier: cool_tolerance
   - name: Target Temperature Dual Enable
     type: property
     access_mod: RW

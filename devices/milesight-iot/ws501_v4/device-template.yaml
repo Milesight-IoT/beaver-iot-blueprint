@@ -1,0 +1,672 @@
+metadata:
+  lora_device_profile_class: ClassC-OTAA
+definition:
+  input:
+    type: object
+    properties:
+      - key: device_id
+        type: string
+        required: true
+        is_device_id: true
+      - key: ipso_version
+        type: long
+        entity_mapping: ipso_version
+      - key: sn
+        type: string
+        entity_mapping: sn
+      - key: hardware_version
+        type: string
+        entity_mapping: hardware_version
+      - key: firmware_version
+        type: string
+        entity_mapping: firmware_version
+      - key: lorawan_class
+        type: long
+        entity_mapping: lorawan_class
+      - key: device_status
+        type: boolean
+        entity_mapping: device_status
+      - key: voltage
+        type: long
+        entity_mapping: voltage
+      - key: electric_power
+        type: long
+        entity_mapping: electric_power
+      - key: power_factor
+        type: long
+        entity_mapping: power_factor
+      - key: power_consumption
+        type: double
+        entity_mapping: power_consumption
+      - key: current_rating
+        type: double
+        entity_mapping: current_rating
+      - key: button_status.button1
+        type: long
+        entity_mapping: button_status.button1
+      - key: overcurrent_alarm.current
+        type: double
+        entity_mapping: overcurrent_alarm.current
+      - key: overcurrent_alarm.status
+        type: long
+        entity_mapping: overcurrent_alarm.status
+      - key: device_abnormal_alarm.status
+        type: long
+        entity_mapping: device_abnormal_alarm.status
+      - key: temperature_alarm.status
+        type: long
+        entity_mapping: temperature_alarm.status
+      - key: voltage_collect_error.type
+        type: long
+        entity_mapping: voltage_collect_error.type
+      - key: electric_power_collect_error.type
+        type: long
+        entity_mapping: electric_power_collect_error.type
+      - key: power_factor_collect_error.type
+        type: long
+        entity_mapping: power_factor_collect_error.type
+      - key: power_consumption_collect_error.type
+        type: long
+        entity_mapping: power_consumption_collect_error.type
+      - key: current_collect_error.type
+        type: long
+        entity_mapping: current_collect_error.type
+  output:
+    type: object
+    properties:
+      - key: reporting_interval
+        type: long
+        entity_mapping: reporting_interval
+      - key: power_switch_mode
+        type: long
+        entity_mapping: power_switch_mode
+      - key: led_mode
+        type: boolean
+        entity_mapping: led_mode
+      - key: button_lock_config.enable
+        type: boolean
+        entity_mapping: button_lock_config.enable
+      - key: button_reset_config
+        type: boolean
+        entity_mapping: button_reset_config
+      - key: power_consumption_3w
+        type: boolean
+        entity_mapping: power_consumption_3w
+      - key: overcurrent_alarm_config.enable
+        type: boolean
+        entity_mapping: overcurrent_alarm_config.enable
+      - key: overcurrent_alarm_config.threshold
+        type: long
+        entity_mapping: overcurrent_alarm_config.threshold
+      - key: overcurrent_protection.enable
+        type: boolean
+        entity_mapping: overcurrent_protection.enable
+      - key: overcurrent_protection.threshold
+        type: long
+        entity_mapping: overcurrent_protection.threshold
+      - key: button_status_control.button_status1
+        type: long
+        entity_mapping: button_status_control.button_status1
+      - key: d2d_settings.d2d_controller_enable
+        type: long
+        entity_mapping: d2d_settings.d2d_controller_enable
+      - key: d2d_settings.d2d_agent_enable
+        type: long
+        entity_mapping: d2d_settings.d2d_agent_enable
+      - key: time_zone
+        type: long
+        entity_mapping: time_zone
+      - key: daylight_saving_time.enable
+        type: boolean
+        entity_mapping: daylight_saving_time.enable
+      - key: daylight_saving_time.start_month
+        type: long
+        entity_mapping: daylight_saving_time.start_month
+      - key: daylight_saving_time.start_week_num
+        type: long
+        entity_mapping: daylight_saving_time.start_week_num
+      - key: daylight_saving_time.start_week_day
+        type: long
+        entity_mapping: daylight_saving_time.start_week_day
+      - key: daylight_saving_time.start_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.start_hour_min
+      - key: daylight_saving_time.end_month
+        type: long
+        entity_mapping: daylight_saving_time.end_month
+      - key: daylight_saving_time.end_week_num
+        type: long
+        entity_mapping: daylight_saving_time.end_week_num
+      - key: daylight_saving_time.end_week_day
+        type: long
+        entity_mapping: daylight_saving_time.end_week_day
+      - key: daylight_saving_time.end_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.end_hour_min
+      - key: daylight_saving_time.dst_bias
+        type: long
+        entity_mapping: daylight_saving_time.dst_bias
+initial_entities:
+  - name: IPSO
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      max_length: 16
+    identifier: ipso_version
+  - name: SN
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 16
+    identifier: sn
+  - name: Hardware Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 6
+    identifier: hardware_version
+  - name: Firmware Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 16
+    identifier: firmware_version
+  - name: LoRaWAN Work Mode
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '2': Class C
+    identifier: lorawan_class
+  - name: Device Status
+    type: property
+    access_mod: R
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'off'
+        'true': 'on'
+    identifier: device_status
+  - name: Voltage
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: V
+    identifier: voltage
+  - name: Electric Power
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: W
+    identifier: electric_power
+  - name: Power Factor
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: power_factor
+  - name: Power Consumption
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: kWh
+    identifier: power_consumption
+  - name: Current Rating
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: A
+    identifier: current_rating
+  - identifier: button_status
+    name: Button1
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Button1
+        value_type: long
+        attributes:
+          enum:
+            '0': 'Off'
+            '1': 'On'
+        identifier: button1
+  - name: Reporting Interval
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      unit: s
+    identifier: reporting_interval
+  - name: When Power is Restored
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      enum:
+        '0': Turn to Off
+        '1': Turn to On
+        '2': Return to Previous Working State
+    identifier: power_switch_mode
+  - name: LED Indicator
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable (Relay closed indicator off)
+    identifier: led_mode
+  - identifier: button_lock_config
+    name: On/Off Lock Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: On/Off Lock Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+  - name: Reset Lock Enable
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: button_reset_config
+  - name: Power Consumption
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: power_consumption_3w
+  - identifier: overcurrent_alarm_config
+    name: Overcurrent Alarm Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Overcurrent Alarm Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Overcurrent Alarm Value
+        value_type: long
+        attributes:
+          unit: A
+        identifier: threshold
+  - identifier: overcurrent_protection
+    name: Overcurrent Protection Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Overcurrent Protection Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Overcurrent Protection Value
+        value_type: long
+        attributes:
+          unit: A
+        identifier: threshold
+  - identifier: button_status_control
+    name: Button1
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Button1
+        value_type: long
+        attributes:
+          enum:
+            '0': 'Off'
+            '1': 'On'
+        identifier: button_status1
+  - identifier: d2d_settings
+    name: D2D Controller Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: D2D Controller Enable
+        value_type: long
+        attributes:
+          enum:
+            '0': Disable
+            '1': Enable
+        identifier: d2d_controller_enable
+      - name: D2D Agent Enable
+        value_type: long
+        attributes:
+          enum:
+            '0': Disable
+            '1': Enable
+        identifier: d2d_agent_enable
+  - name: Time Zone
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      enum:
+        '0': UTC(WET)
+        '60': UTC+1(CET)
+        '120': UTC+2(EET)
+        '180': UTC+3(MSK)
+        '210': UTC+3:30(IRST)
+        '240': UTC+4(GST)
+        '270': UTC+4:30(AFT)
+        '300': UTC+5(PKT)
+        '330': UTC+5:30(IST)
+        '345': UTC+5:45(NPT)
+        '360': UTC+6(BHT)
+        '390': UTC+6:30(MMT)
+        '420': UTC+7(ICT)
+        '480': UTC+8(CT/CST)
+        '540': UTC+9(JST)
+        '570': UTC+9:30(ACST)
+        '600': UTC+10(AEST)
+        '630': UTC+10:30(LHST)
+        '660': UTC+11(VUT)
+        '720': UTC+12(NZST)
+        '765': UTC+12:45(CHAST)
+        '780': UTC+13(PHOT)
+        '840': UTC+14(LINT)
+        '-720': UTC-12(IDLW)
+        '-660': UTC-11(SST)
+        '-600': UTC-10(HST)
+        '-570': UTC-9:30(MIT)
+        '-540': UTC-9(AKST)
+        '-480': UTC-8(PST)
+        '-420': UTC-7(MST)
+        '-360': UTC-6(CST)
+        '-300': UTC-5(EST)
+        '-240': UTC-4(AST)
+        '-210': UTC-3:30(NST)
+        '-180': UTC-3(BRT)
+        '-120': UTC-2(FNT)
+        '-60': UTC-1(CVT)
+    identifier: time_zone
+  - identifier: daylight_saving_time
+    name: Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Month
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: start_month
+      - name: Number of Week
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: start_week_num
+      - name: Week
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: start_week_day
+      - name: Time
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: start_hour_min
+      - name: Month
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: end_month
+      - name: Number of Week
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: end_week_num
+      - name: Week
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: end_week_day
+      - name: Time
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: end_hour_min
+      - name: DST Bias
+        value_type: long
+        attributes:
+          unit: min
+        identifier: dst_bias
+  - identifier: overcurrent_alarm
+    name: Current
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Current
+        value_type: double
+        attributes:
+          unit: A
+        identifier: current
+      - name: Status
+        value_type: long
+        attributes:
+          enum:
+            '1': Overcurrent
+        identifier: status
+  - identifier: device_abnormal_alarm
+    name: Status
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Status
+        value_type: long
+        attributes:
+          enum:
+            '1': Abnormal
+        identifier: status
+  - identifier: temperature_alarm
+    name: Status
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Status
+        value_type: long
+        attributes:
+          enum:
+            '1': Overtemperature
+        identifier: status
+  - identifier: voltage_collect_error
+    name: Type
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - identifier: electric_power_collect_error
+    name: Type
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - identifier: power_factor_collect_error
+    name: Type
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - identifier: power_consumption_collect_error
+    name: Type
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - identifier: current_collect_error
+    name: Type
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+codec:
+  id: default
+  ref: ws501_v4/codec/device-codec.yaml

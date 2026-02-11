@@ -1,0 +1,2209 @@
+metadata:
+  lora_device_profile_class: ClassB-OTAA
+definition:
+  input:
+    type: object
+    properties:
+      - key: device_id
+        type: string
+        required: true
+        is_device_id: true
+      - key: anti_freeze_protection_alarm.lifted#current_valve_status
+        type: long
+        entity_mapping: anti_freeze_protection_alarm.lifted#current_valve_status
+      - key: anti_freeze_protection_alarm.lifted#environment_temperature
+        type: double
+        entity_mapping: anti_freeze_protection_alarm.lifted#environment_temperature
+      - key: anti_freeze_protection_alarm.trigger#current_valve_status
+        type: long
+        entity_mapping: anti_freeze_protection_alarm.trigger#current_valve_status
+      - key: anti_freeze_protection_alarm.trigger#environment_temperature
+        type: double
+        entity_mapping: anti_freeze_protection_alarm.trigger#environment_temperature
+      - key: anti_freeze_protection_alarm.type
+        type: long
+        entity_mapping: anti_freeze_protection_alarm.type
+      - key: anti_freeze_protection_setting.enable
+        type: boolean
+        entity_mapping: anti_freeze_protection_setting.enable
+      - key: anti_freeze_protection_setting.temperature_value
+        type: double
+        entity_mapping: anti_freeze_protection_setting.temperature_value
+      - key: auto_away_report.active_by_target_temperature#environment_temperature
+        type: double
+        entity_mapping: auto_away_report.active_by_target_temperature#environment_temperature
+      - key: auto_away_report.active_by_target_temperature#state
+        type: long
+        entity_mapping: auto_away_report.active_by_target_temperature#state
+      - key: auto_away_report.active_by_target_temperature#target_temperature
+        type: double
+        entity_mapping: auto_away_report.active_by_target_temperature#target_temperature
+      - key: >-
+          auto_away_report.active_by_target_valve_opening#environment_temperature
+        type: double
+        entity_mapping: >-
+          auto_away_report.active_by_target_valve_opening#environment_temperature
+      - key: auto_away_report.active_by_target_valve_opening#state
+        type: long
+        entity_mapping: auto_away_report.active_by_target_valve_opening#state
+      - key: auto_away_report.active_by_target_valve_opening#target_valve_opening
+        type: long
+        entity_mapping: auto_away_report.active_by_target_valve_opening#target_valve_opening
+      - key: auto_away_report.event_type
+        type: long
+        entity_mapping: auto_away_report.event_type
+      - key: >-
+          auto_away_report.inactive_by_target_temperature#environment_temperature
+        type: double
+        entity_mapping: >-
+          auto_away_report.inactive_by_target_temperature#environment_temperature
+      - key: auto_away_report.inactive_by_target_temperature#state
+        type: long
+        entity_mapping: auto_away_report.inactive_by_target_temperature#state
+      - key: auto_away_report.inactive_by_target_temperature#target_temperature
+        type: double
+        entity_mapping: auto_away_report.inactive_by_target_temperature#target_temperature
+      - key: >-
+          auto_away_report.inactive_by_target_valve_opening#environment_temperature
+        type: double
+        entity_mapping: >-
+          auto_away_report.inactive_by_target_valve_opening#environment_temperature
+      - key: auto_away_report.inactive_by_target_valve_opening#state
+        type: long
+        entity_mapping: auto_away_report.inactive_by_target_valve_opening#state
+      - key: auto_away_report.inactive_by_target_valve_opening#target_valve_opening
+        type: long
+        entity_mapping: auto_away_report.inactive_by_target_valve_opening#target_valve_opening
+      - key: auto_away_settings.cycle_time_fri
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_fri
+      - key: auto_away_settings.cycle_time_mon
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_mon
+      - key: auto_away_settings.cycle_time_sat
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_sat
+      - key: auto_away_settings.cycle_time_sun
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_sun
+      - key: auto_away_settings.cycle_time_thur
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_thur
+      - key: auto_away_settings.cycle_time_tues
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_tues
+      - key: auto_away_settings.cycle_time_wed
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_wed
+      - key: auto_away_settings.enable
+        type: boolean
+        entity_mapping: auto_away_settings.enable
+      - key: auto_away_settings.end_time
+        type: long
+        entity_mapping: auto_away_settings.end_time
+      - key: auto_away_settings.energy_saving_settings#energy_saving_temperature
+        type: double
+        entity_mapping: auto_away_settings.energy_saving_settings#energy_saving_temperature
+      - key: >-
+          auto_away_settings.energy_saving_settings#energy_saving_valve_opening_degree
+        type: long
+        entity_mapping: >-
+          auto_away_settings.energy_saving_settings#energy_saving_valve_opening_degree
+      - key: auto_away_settings.energy_saving_settings#mode
+        type: long
+        entity_mapping: auto_away_settings.energy_saving_settings#mode
+      - key: auto_away_settings.reserved
+        type: long
+        entity_mapping: auto_away_settings.reserved
+      - key: auto_away_settings.start_time
+        type: long
+        entity_mapping: auto_away_settings.start_time
+      - key: auto_p_enable
+        type: boolean
+        entity_mapping: auto_p_enable
+      - key: battery
+        type: long
+        entity_mapping: battery
+      - key: change_report_enable
+        type: boolean
+        entity_mapping: change_report_enable
+      - key: child_lock.enable
+        type: boolean
+        entity_mapping: child_lock.enable
+      - key: child_lock.func_button
+        type: boolean
+        entity_mapping: child_lock.func_button
+      - key: child_lock.reserved
+        type: long
+        entity_mapping: child_lock.reserved
+      - key: child_lock.system_button
+        type: boolean
+        entity_mapping: child_lock.system_button
+      - key: data_storage_settings.command
+        type: long
+        entity_mapping: data_storage_settings.command
+      - key: data_storage_settings.enable
+        type: boolean
+        entity_mapping: data_storage_settings.enable
+      - key: data_storage_settings.retransmission_enable
+        type: boolean
+        entity_mapping: data_storage_settings.retransmission_enable
+      - key: data_storage_settings.retransmission_interval
+        type: long
+        entity_mapping: data_storage_settings.retransmission_interval
+      - key: data_storage_settings.retrieval_interval
+        type: long
+        entity_mapping: data_storage_settings.retrieval_interval
+      - key: daylight_saving_time.daylight_saving_time_offset
+        type: long
+        entity_mapping: daylight_saving_time.daylight_saving_time_offset
+      - key: daylight_saving_time.enable
+        type: boolean
+        entity_mapping: daylight_saving_time.enable
+      - key: daylight_saving_time.end_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.end_hour_min
+      - key: daylight_saving_time.end_month
+        type: long
+        entity_mapping: daylight_saving_time.end_month
+      - key: daylight_saving_time.end_week_day
+        type: long
+        entity_mapping: daylight_saving_time.end_week_day
+      - key: daylight_saving_time.end_week_num
+        type: long
+        entity_mapping: daylight_saving_time.end_week_num
+      - key: daylight_saving_time.start_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.start_hour_min
+      - key: daylight_saving_time.start_month
+        type: long
+        entity_mapping: daylight_saving_time.start_month
+      - key: daylight_saving_time.start_week_day
+        type: long
+        entity_mapping: daylight_saving_time.start_week_day
+      - key: daylight_saving_time.start_week_num
+        type: long
+        entity_mapping: daylight_saving_time.start_week_num
+      - key: device_status
+        type: boolean
+        entity_mapping: device_status
+      - key: environment_temperature_display_enable
+        type: boolean
+        entity_mapping: environment_temperature_display_enable
+      - key: heating_period_settings.command
+        type: long
+        entity_mapping: heating_period_settings.command
+      - key: heating_period_settings.heating_date_settings#end_day
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#end_day
+      - key: heating_period_settings.heating_date_settings#end_mon
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#end_mon
+      - key: heating_period_settings.heating_date_settings#start_day
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#start_day
+      - key: heating_period_settings.heating_date_settings#start_mon
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#start_mon
+      - key: >-
+          heating_period_settings.heating_period_reporting_interval#minutes_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.heating_period_reporting_interval#minutes_of_time
+      - key: >-
+          heating_period_settings.heating_period_reporting_interval#seconds_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.heating_period_reporting_interval#seconds_of_time
+      - key: heating_period_settings.heating_period_reporting_interval#unit
+        type: long
+        entity_mapping: heating_period_settings.heating_period_reporting_interval#unit
+      - key: >-
+          heating_period_settings.non_heating_period_reporting_interval#minutes_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.non_heating_period_reporting_interval#minutes_of_time
+      - key: >-
+          heating_period_settings.non_heating_period_reporting_interval#seconds_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.non_heating_period_reporting_interval#seconds_of_time
+      - key: heating_period_settings.non_heating_period_reporting_interval#unit
+        type: long
+        entity_mapping: heating_period_settings.non_heating_period_reporting_interval#unit
+      - key: heating_period_settings.valve_status_control
+        type: long
+        entity_mapping: heating_period_settings.valve_status_control
+      - key: historical_data_report.mode
+        type: long
+        entity_mapping: historical_data_report.mode
+      - key: historical_data_report.timestamp
+        type: long
+        entity_mapping: historical_data_report.timestamp
+      - key: low_battery_alarm.value
+        type: long
+        entity_mapping: low_battery_alarm.value
+      - key: mandatory_heating_alarm.enter#battery_level
+        type: long
+        entity_mapping: mandatory_heating_alarm.enter#battery_level
+      - key: mandatory_heating_alarm.enter#current_valve_status
+        type: long
+        entity_mapping: mandatory_heating_alarm.enter#current_valve_status
+      - key: mandatory_heating_alarm.enter#environment_temperature
+        type: double
+        entity_mapping: mandatory_heating_alarm.enter#environment_temperature
+      - key: mandatory_heating_alarm.exit#battery_level
+        type: long
+        entity_mapping: mandatory_heating_alarm.exit#battery_level
+      - key: mandatory_heating_alarm.exit#current_valve_status
+        type: long
+        entity_mapping: mandatory_heating_alarm.exit#current_valve_status
+      - key: mandatory_heating_alarm.exit#environment_temperature
+        type: double
+        entity_mapping: mandatory_heating_alarm.exit#environment_temperature
+      - key: mandatory_heating_alarm.type
+        type: long
+        entity_mapping: mandatory_heating_alarm.type
+      - key: mandatory_heating_enable
+        type: boolean
+        entity_mapping: mandatory_heating_enable
+      - key: motor_calibration_result_report.status
+        type: long
+        entity_mapping: motor_calibration_result_report.status
+      - key: motor_controllable_range.distance
+        type: double
+        entity_mapping: motor_controllable_range.distance
+      - key: motor_controllable_range.enable
+        type: boolean
+        entity_mapping: motor_controllable_range.enable
+      - key: motor_position
+        type: long
+        entity_mapping: motor_position
+      - key: motor_stroke_limit
+        type: long
+        entity_mapping: motor_stroke_limit
+      - key: motor_total_stroke
+        type: long
+        entity_mapping: motor_total_stroke
+      - key: oem_id
+        type: string
+        entity_mapping: oem_id
+      - key: periodic_reporting.integrated_control_for_heating#battery_level
+        type: long
+        entity_mapping: periodic_reporting.integrated_control_for_heating#battery_level
+      - key: >-
+          periodic_reporting.integrated_control_for_heating#current_valve_opening
+        type: long
+        entity_mapping: >-
+          periodic_reporting.integrated_control_for_heating#current_valve_opening
+      - key: >-
+          periodic_reporting.integrated_control_for_heating#environment_temperature
+        type: double
+        entity_mapping: >-
+          periodic_reporting.integrated_control_for_heating#environment_temperature
+      - key: periodic_reporting.integrated_control_for_heating#target_temperature
+        type: double
+        entity_mapping: periodic_reporting.integrated_control_for_heating#target_temperature
+      - key: periodic_reporting.integrated_control_for_heating#target_valve_opening
+        type: long
+        entity_mapping: periodic_reporting.integrated_control_for_heating#target_valve_opening
+      - key: periodic_reporting.non_heating_season#battery_level
+        type: long
+        entity_mapping: periodic_reporting.non_heating_season#battery_level
+      - key: periodic_reporting.non_heating_season#target_valve_opening
+        type: long
+        entity_mapping: periodic_reporting.non_heating_season#target_valve_opening
+      - key: periodic_reporting.target_temperature_for_heating#battery_level
+        type: long
+        entity_mapping: periodic_reporting.target_temperature_for_heating#battery_level
+      - key: >-
+          periodic_reporting.target_temperature_for_heating#current_valve_opening
+        type: long
+        entity_mapping: >-
+          periodic_reporting.target_temperature_for_heating#current_valve_opening
+      - key: >-
+          periodic_reporting.target_temperature_for_heating#environment_temperature
+        type: double
+        entity_mapping: >-
+          periodic_reporting.target_temperature_for_heating#environment_temperature
+      - key: periodic_reporting.target_temperature_for_heating#target_temperature
+        type: double
+        entity_mapping: periodic_reporting.target_temperature_for_heating#target_temperature
+      - key: periodic_reporting.target_valve_opening_for_heating#battery_level
+        type: long
+        entity_mapping: periodic_reporting.target_valve_opening_for_heating#battery_level
+      - key: >-
+          periodic_reporting.target_valve_opening_for_heating#current_valve_opening
+        type: long
+        entity_mapping: >-
+          periodic_reporting.target_valve_opening_for_heating#current_valve_opening
+      - key: >-
+          periodic_reporting.target_valve_opening_for_heating#environment_temperature
+        type: double
+        entity_mapping: >-
+          periodic_reporting.target_valve_opening_for_heating#environment_temperature
+      - key: >-
+          periodic_reporting.target_valve_opening_for_heating#target_valve_opening
+        type: long
+        entity_mapping: >-
+          periodic_reporting.target_valve_opening_for_heating#target_valve_opening
+      - key: product_sn
+        type: string
+        entity_mapping: product_sn
+      - key: random_key
+        type: boolean
+        entity_mapping: random_key
+      - key: target_temperature
+        type: double
+        entity_mapping: target_temperature
+      - key: temp_control.command
+        type: long
+        entity_mapping: temp_control.command
+      - key: temp_control.enable
+        type: boolean
+        entity_mapping: temp_control.enable
+      - key: temp_control.mode_settings#auto_control#target_temperature
+        type: double
+        entity_mapping: temp_control.mode_settings#auto_control#target_temperature
+      - key: temp_control.mode_settings#intergrated_control#target_temp
+        type: double
+        entity_mapping: temp_control.mode_settings#intergrated_control#target_temp
+      - key: temp_control.mode_settings#mode
+        type: long
+        entity_mapping: temp_control.mode_settings#mode
+      - key: temp_control.mode_settings#valve_control#target_valve_status
+        type: long
+        entity_mapping: temp_control.mode_settings#valve_control#target_valve_status
+      - key: temp_control.over_temperature_side_deadband
+        type: double
+        entity_mapping: temp_control.over_temperature_side_deadband
+      - key: temp_control.target_temperature_adjustment_range_max
+        type: double
+        entity_mapping: temp_control.target_temperature_adjustment_range_max
+      - key: temp_control.target_temperature_adjustment_range_min
+        type: double
+        entity_mapping: temp_control.target_temperature_adjustment_range_min
+      - key: temp_control.target_temperature_resolution
+        type: long
+        entity_mapping: temp_control.target_temperature_resolution
+      - key: temp_control.under_temperature_side_deadband
+        type: double
+        entity_mapping: temp_control.under_temperature_side_deadband
+      - key: target_valve_opening_degree
+        type: long
+        entity_mapping: target_valve_opening_degree
+      - key: temperature
+        type: double
+        entity_mapping: temperature
+      - key: temperature_alarm_settings.enable
+        type: boolean
+        entity_mapping: temperature_alarm_settings.enable
+      - key: temperature_alarm_settings.threshold_condition
+        type: long
+        entity_mapping: temperature_alarm_settings.threshold_condition
+      - key: temperature_alarm_settings.threshold_max
+        type: double
+        entity_mapping: temperature_alarm_settings.threshold_max
+      - key: temperature_alarm_settings.threshold_min
+        type: double
+        entity_mapping: temperature_alarm_settings.threshold_min
+      - key: temperature_alarm.lower_range_alarm_deactivation#temperature
+        type: double
+        entity_mapping: temperature_alarm.lower_range_alarm_deactivation#temperature
+      - key: temperature_alarm.lower_range_alarm_trigger#temperature
+        type: double
+        entity_mapping: temperature_alarm.lower_range_alarm_trigger#temperature
+      - key: temperature_alarm.over_range_alarm_deactivation#temperature
+        type: double
+        entity_mapping: temperature_alarm.over_range_alarm_deactivation#temperature
+      - key: temperature_alarm.over_range_alarm_trigger#temperature
+        type: double
+        entity_mapping: temperature_alarm.over_range_alarm_trigger#temperature
+      - key: temperature_alarm.type
+        type: long
+        entity_mapping: temperature_alarm.type
+      - key: temperature_calibration_settings.calibration_value
+        type: double
+        entity_mapping: temperature_calibration_settings.calibration_value
+      - key: temperature_calibration_settings.enable
+        type: boolean
+        entity_mapping: temperature_calibration_settings.enable
+      - key: temperature_source_settings.external_ntc_reception#timeout
+        type: long
+        entity_mapping: temperature_source_settings.external_ntc_reception#timeout
+      - key: temperature_source_settings.external_ntc_reception#timeout_response
+        type: long
+        entity_mapping: temperature_source_settings.external_ntc_reception#timeout_response
+      - key: temperature_source_settings.lorawan_reception#timeout
+        type: long
+        entity_mapping: temperature_source_settings.lorawan_reception#timeout
+      - key: temperature_source_settings.lorawan_reception#timeout_response
+        type: long
+        entity_mapping: temperature_source_settings.lorawan_reception#timeout_response
+      - key: temperature_source_settings.type
+        type: long
+        entity_mapping: temperature_source_settings.type
+      - key: temperature_unit
+        type: long
+        entity_mapping: temperature_unit
+      - key: time_zone
+        type: long
+        entity_mapping: time_zone
+      - key: tsl_version
+        type: string
+        entity_mapping: tsl_version
+      - key: valve_opening_degree
+        type: long
+        entity_mapping: valve_opening_degree
+      - key: version.firmware_version
+        type: string
+        entity_mapping: version.firmware_version
+      - key: version.hardware_version
+        type: string
+        entity_mapping: version.hardware_version
+      - key: window_opening_alarm.release#environment_temperature
+        type: double
+        entity_mapping: window_opening_alarm.release#environment_temperature
+      - key: window_opening_alarm.release#state
+        type: long
+        entity_mapping: window_opening_alarm.release#state
+      - key: window_opening_alarm.trigger#environment_temperature
+        type: double
+        entity_mapping: window_opening_alarm.trigger#environment_temperature
+      - key: window_opening_alarm.trigger#state
+        type: long
+        entity_mapping: window_opening_alarm.trigger#state
+      - key: window_opening_alarm.type
+        type: long
+        entity_mapping: window_opening_alarm.type
+      - key: window_opening_detection_settings.cooling_rate
+        type: double
+        entity_mapping: window_opening_detection_settings.cooling_rate
+      - key: window_opening_detection_settings.enable
+        type: boolean
+        entity_mapping: window_opening_detection_settings.enable
+      - key: window_opening_detection_settings.stop_temperature_control_time
+        type: long
+        entity_mapping: window_opening_detection_settings.stop_temperature_control_time
+      - key: window_opening_detection_settings.valve_status
+        type: long
+        entity_mapping: window_opening_detection_settings.valve_status
+  output:
+    type: object
+    properties:
+      - key: anti_freeze_protection_setting.enable
+        type: boolean
+        entity_mapping: anti_freeze_protection_setting.enable
+      - key: anti_freeze_protection_setting.temperature_value
+        type: double
+        entity_mapping: anti_freeze_protection_setting.temperature_value
+      - key: auto_away_settings.cycle_time_fri
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_fri
+      - key: auto_away_settings.cycle_time_mon
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_mon
+      - key: auto_away_settings.cycle_time_sat
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_sat
+      - key: auto_away_settings.cycle_time_sun
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_sun
+      - key: auto_away_settings.cycle_time_thur
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_thur
+      - key: auto_away_settings.cycle_time_tues
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_tues
+      - key: auto_away_settings.cycle_time_wed
+        type: boolean
+        entity_mapping: auto_away_settings.cycle_time_wed
+      - key: auto_away_settings.enable
+        type: boolean
+        entity_mapping: auto_away_settings.enable
+      - key: auto_away_settings.end_time
+        type: long
+        entity_mapping: auto_away_settings.end_time
+      - key: auto_away_settings.energy_saving_settings#energy_saving_temperature
+        type: double
+        entity_mapping: auto_away_settings.energy_saving_settings#energy_saving_temperature
+      - key: >-
+          auto_away_settings.energy_saving_settings#energy_saving_valve_opening_degree
+        type: long
+        entity_mapping: >-
+          auto_away_settings.energy_saving_settings#energy_saving_valve_opening_degree
+      - key: auto_away_settings.energy_saving_settings#mode
+        type: long
+        entity_mapping: auto_away_settings.energy_saving_settings#mode
+      - key: auto_away_settings.reserved
+        type: long
+        entity_mapping: auto_away_settings.reserved
+      - key: auto_away_settings.start_time
+        type: long
+        entity_mapping: auto_away_settings.start_time
+      - key: auto_p_enable
+        type: boolean
+        entity_mapping: auto_p_enable
+      - key: calibrate_motor
+        type: boolean
+        entity_mapping: calibrate_motor
+      - key: change_report_enable
+        type: boolean
+        entity_mapping: change_report_enable
+      - key: child_lock.enable
+        type: boolean
+        entity_mapping: child_lock.enable
+      - key: child_lock.func_button
+        type: boolean
+        entity_mapping: child_lock.func_button
+      - key: child_lock.reserved
+        type: long
+        entity_mapping: child_lock.reserved
+      - key: child_lock.system_button
+        type: boolean
+        entity_mapping: child_lock.system_button
+      - key: clear_historical_data
+        type: boolean
+        entity_mapping: clear_historical_data
+      - key: collect_data
+        type: boolean
+        entity_mapping: collect_data
+      - key: data_storage_settings.command
+        type: long
+        entity_mapping: data_storage_settings.command
+      - key: data_storage_settings.enable
+        type: boolean
+        entity_mapping: data_storage_settings.enable
+      - key: data_storage_settings.retransmission_enable
+        type: boolean
+        entity_mapping: data_storage_settings.retransmission_enable
+      - key: data_storage_settings.retransmission_interval
+        type: long
+        entity_mapping: data_storage_settings.retransmission_interval
+      - key: data_storage_settings.retrieval_interval
+        type: long
+        entity_mapping: data_storage_settings.retrieval_interval
+      - key: daylight_saving_time.daylight_saving_time_offset
+        type: long
+        entity_mapping: daylight_saving_time.daylight_saving_time_offset
+      - key: daylight_saving_time.enable
+        type: boolean
+        entity_mapping: daylight_saving_time.enable
+      - key: daylight_saving_time.end_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.end_hour_min
+      - key: daylight_saving_time.end_month
+        type: long
+        entity_mapping: daylight_saving_time.end_month
+      - key: daylight_saving_time.end_week_day
+        type: long
+        entity_mapping: daylight_saving_time.end_week_day
+      - key: daylight_saving_time.end_week_num
+        type: long
+        entity_mapping: daylight_saving_time.end_week_num
+      - key: daylight_saving_time.start_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.start_hour_min
+      - key: daylight_saving_time.start_month
+        type: long
+        entity_mapping: daylight_saving_time.start_month
+      - key: daylight_saving_time.start_week_day
+        type: long
+        entity_mapping: daylight_saving_time.start_week_day
+      - key: daylight_saving_time.start_week_num
+        type: long
+        entity_mapping: daylight_saving_time.start_week_num
+      - key: delete_schedule.type
+        type: long
+        entity_mapping: delete_schedule.type
+      - key: device_status
+        type: boolean
+        entity_mapping: device_status
+      - key: environment_temperature_display_enable
+        type: boolean
+        entity_mapping: environment_temperature_display_enable
+      - key: heating_period_settings.command
+        type: long
+        entity_mapping: heating_period_settings.command
+      - key: heating_period_settings.heating_date_settings#end_day
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#end_day
+      - key: heating_period_settings.heating_date_settings#end_mon
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#end_mon
+      - key: heating_period_settings.heating_date_settings#start_day
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#start_day
+      - key: heating_period_settings.heating_date_settings#start_mon
+        type: long
+        entity_mapping: heating_period_settings.heating_date_settings#start_mon
+      - key: >-
+          heating_period_settings.heating_period_reporting_interval#minutes_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.heating_period_reporting_interval#minutes_of_time
+      - key: >-
+          heating_period_settings.heating_period_reporting_interval#seconds_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.heating_period_reporting_interval#seconds_of_time
+      - key: heating_period_settings.heating_period_reporting_interval#unit
+        type: long
+        entity_mapping: heating_period_settings.heating_period_reporting_interval#unit
+      - key: >-
+          heating_period_settings.non_heating_period_reporting_interval#minutes_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.non_heating_period_reporting_interval#minutes_of_time
+      - key: >-
+          heating_period_settings.non_heating_period_reporting_interval#seconds_of_time
+        type: long
+        entity_mapping: >-
+          heating_period_settings.non_heating_period_reporting_interval#seconds_of_time
+      - key: heating_period_settings.non_heating_period_reporting_interval#unit
+        type: long
+        entity_mapping: heating_period_settings.non_heating_period_reporting_interval#unit
+      - key: heating_period_settings.valve_status_control
+        type: long
+        entity_mapping: heating_period_settings.valve_status_control
+      - key: mandatory_heating_enable
+        type: boolean
+        entity_mapping: mandatory_heating_enable
+      - key: motor_controllable_range.distance
+        type: double
+        entity_mapping: motor_controllable_range.distance
+      - key: motor_controllable_range.enable
+        type: boolean
+        entity_mapping: motor_controllable_range.enable
+      - key: motor_stroke_limit
+        type: long
+        entity_mapping: motor_stroke_limit
+      - key: oem_id
+        type: string
+        entity_mapping: oem_id
+      - key: query_device_status
+        type: boolean
+        entity_mapping: query_device_status
+      - key: query_motor_stroke_position
+        type: boolean
+        entity_mapping: query_motor_stroke_position
+      - key: random_key
+        type: boolean
+        entity_mapping: random_key
+      - key: reboot
+        type: boolean
+        entity_mapping: reboot
+      - key: reconnect
+        type: boolean
+        entity_mapping: reconnect
+      - key: request_query_all_configurations
+        type: boolean
+        entity_mapping: request_query_all_configurations
+      - key: reset
+        type: boolean
+        entity_mapping: reset
+      - key: retrieve_historical_data_by_time_range.end_time
+        type: long
+        entity_mapping: retrieve_historical_data_by_time_range.end_time
+      - key: retrieve_historical_data_by_time_range.start_time
+        type: long
+        entity_mapping: retrieve_historical_data_by_time_range.start_time
+      - key: retrieve_historical_data_by_time.time
+        type: long
+        entity_mapping: retrieve_historical_data_by_time.time
+      - key: set_occupancy_state.state
+        type: long
+        entity_mapping: set_occupancy_state.state
+      - key: set_opening_window.state
+        type: long
+        entity_mapping: set_opening_window.state
+      - key: set_target_temperature.value
+        type: double
+        entity_mapping: set_target_temperature.value
+      - key: set_target_valve_opening_degree.value
+        type: long
+        entity_mapping: set_target_valve_opening_degree.value
+      - key: set_temperature.value
+        type: double
+        entity_mapping: set_temperature.value
+      - key: set_time.timestamp
+        type: long
+        entity_mapping: set_time.timestamp
+      - key: stop_historical_data_retrieval
+        type: boolean
+        entity_mapping: stop_historical_data_retrieval
+      - key: synchronize_time
+        type: boolean
+        entity_mapping: synchronize_time
+      - key: temp_control.command
+        type: long
+        entity_mapping: temp_control.command
+      - key: temp_control.enable
+        type: boolean
+        entity_mapping: temp_control.enable
+      - key: temp_control.mode_settings#auto_control#target_temperature
+        type: double
+        entity_mapping: temp_control.mode_settings#auto_control#target_temperature
+      - key: temp_control.mode_settings#intergrated_control#target_temp
+        type: double
+        entity_mapping: temp_control.mode_settings#intergrated_control#target_temp
+      - key: temp_control.mode_settings#mode
+        type: long
+        entity_mapping: temp_control.mode_settings#mode
+      - key: temp_control.mode_settings#valve_control#target_valve_status
+        type: long
+        entity_mapping: temp_control.mode_settings#valve_control#target_valve_status
+      - key: temp_control.over_temperature_side_deadband
+        type: double
+        entity_mapping: temp_control.over_temperature_side_deadband
+      - key: temp_control.target_temperature_adjustment_range_max
+        type: double
+        entity_mapping: temp_control.target_temperature_adjustment_range_max
+      - key: temp_control.target_temperature_adjustment_range_min
+        type: double
+        entity_mapping: temp_control.target_temperature_adjustment_range_min
+      - key: temp_control.target_temperature_resolution
+        type: long
+        entity_mapping: temp_control.target_temperature_resolution
+      - key: temp_control.under_temperature_side_deadband
+        type: double
+        entity_mapping: temp_control.under_temperature_side_deadband
+      - key: temperature_alarm_settings.enable
+        type: boolean
+        entity_mapping: temperature_alarm_settings.enable
+      - key: temperature_alarm_settings.threshold_condition
+        type: long
+        entity_mapping: temperature_alarm_settings.threshold_condition
+      - key: temperature_alarm_settings.threshold_max
+        type: double
+        entity_mapping: temperature_alarm_settings.threshold_max
+      - key: temperature_alarm_settings.threshold_min
+        type: double
+        entity_mapping: temperature_alarm_settings.threshold_min
+      - key: temperature_calibration_settings.calibration_value
+        type: double
+        entity_mapping: temperature_calibration_settings.calibration_value
+      - key: temperature_calibration_settings.enable
+        type: boolean
+        entity_mapping: temperature_calibration_settings.enable
+      - key: temperature_source_settings.external_ntc_reception#timeout
+        type: long
+        entity_mapping: temperature_source_settings.external_ntc_reception#timeout
+      - key: temperature_source_settings.external_ntc_reception#timeout_response
+        type: long
+        entity_mapping: temperature_source_settings.external_ntc_reception#timeout_response
+      - key: temperature_source_settings.lorawan_reception#timeout
+        type: long
+        entity_mapping: temperature_source_settings.lorawan_reception#timeout
+      - key: temperature_source_settings.lorawan_reception#timeout_response
+        type: long
+        entity_mapping: temperature_source_settings.lorawan_reception#timeout_response
+      - key: temperature_source_settings.type
+        type: long
+        entity_mapping: temperature_source_settings.type
+      - key: temperature_unit
+        type: long
+        entity_mapping: temperature_unit
+      - key: time_zone
+        type: long
+        entity_mapping: time_zone
+      - key: window_opening_detection_settings.cooling_rate
+        type: double
+        entity_mapping: window_opening_detection_settings.cooling_rate
+      - key: window_opening_detection_settings.enable
+        type: boolean
+        entity_mapping: window_opening_detection_settings.enable
+      - key: window_opening_detection_settings.stop_temperature_control_time
+        type: long
+        entity_mapping: window_opening_detection_settings.stop_temperature_control_time
+      - key: window_opening_detection_settings.valve_status
+        type: long
+        entity_mapping: window_opening_detection_settings.valve_status
+initial_entities:
+  - identifier: anti_freeze_protection_alarm
+    name: Current Valve Opening
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: lifted#current_valve_status
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: lifted#environment_temperature
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: trigger#current_valve_status
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: trigger#environment_temperature
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '32': Freeze Protection Released
+            '33': Freeze Protection Trigger
+        identifier: type
+  - identifier: anti_freeze_protection_setting
+    name: Enable
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Freeze Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: temperature_value
+  - identifier: auto_away_report
+    name: Ambient Temperature
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: active_by_target_temperature#environment_temperature
+      - name: Occupancy status
+        value_type: long
+        attributes:
+          enum:
+            '0': Unoccupied
+            '1': Occupied
+        identifier: active_by_target_temperature#state
+      - name: Energy Saving Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: active_by_target_temperature#target_temperature
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: active_by_target_valve_opening#environment_temperature
+      - name: Occupancy status
+        value_type: long
+        attributes:
+          enum:
+            '0': Unoccupied
+            '1': Occupied
+        identifier: active_by_target_valve_opening#state
+      - name: Energy Saving Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: active_by_target_valve_opening#target_valve_opening
+      - name: Event Type
+        value_type: long
+        attributes:
+          enum:
+            '32': Auto-Away Exit
+            '33': Auto-Away Trigger
+            '34': Auto-Away Exit
+            '35': Auto-Away Trigger
+        identifier: event_type
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: inactive_by_target_temperature#environment_temperature
+      - name: Occupancy status
+        value_type: long
+        attributes:
+          enum:
+            '0': Unoccupied
+            '1': Occupied
+        identifier: inactive_by_target_temperature#state
+      - name: Target Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: inactive_by_target_temperature#target_temperature
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: inactive_by_target_valve_opening#environment_temperature
+      - name: Occupancy status
+        value_type: long
+        attributes:
+          enum:
+            '0': Unoccupied
+            '1': Occupied
+        identifier: inactive_by_target_valve_opening#state
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: inactive_by_target_valve_opening#target_valve_opening
+  - identifier: auto_away_settings
+    name: Fri.
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Fri.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_fri
+      - name: Mon.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_mon
+      - name: Sat.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_sat
+      - name: Sun.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_sun
+      - name: Thur.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_thur
+      - name: Tues.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_tues
+      - name: Wed.
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: cycle_time_wed
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: End Time
+        value_type: long
+        attributes:
+          unit: min
+        identifier: end_time
+      - name: Energy Saving Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: energy_saving_settings#energy_saving_temperature
+      - name: Energy Saving Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: energy_saving_settings#energy_saving_valve_opening_degree
+      - name: Energy Saving Settings
+        value_type: long
+        attributes:
+          enum:
+            '0': Energy Saving Temperature
+            '1': Energy Saving Valve Opening
+        identifier: energy_saving_settings#mode
+      - name: Reserved
+        value_type: long
+        identifier: reserved
+      - name: Start Time
+        value_type: long
+        attributes:
+          unit: min
+        identifier: start_time
+  - name: Auto-P
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: auto_p_enable
+  - name: Battery
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: battery
+  - name: Calibrate Motor
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: calibrate_motor
+  - name: Local Modification Report
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: change_report_enable
+  - identifier: child_lock
+    name: Enable
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: + /-
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: func_button
+      - name: Reserved
+        value_type: long
+        identifier: reserved
+      - name: Power On/Off
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: system_button
+  - name: Clear Data
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: clear_historical_data
+  - name: Data Colloction
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: collect_data
+  - identifier: data_storage_settings
+    name: Sub-command
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Sub-command
+        value_type: long
+        attributes:
+          enum:
+            '0': Data Storage Enable
+            '1': Data Retransmission Enable
+            '2': Data Retransmission Interval
+            '3': Data Retrieval Interval
+        identifier: command
+      - name: Data Storage Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Data Retransmission Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: retransmission_enable
+      - name: Data Retransmission Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: retransmission_interval
+      - name: Data Retrieval Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: retrieval_interval
+  - identifier: daylight_saving_time
+    name: DST Bias
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: DST Bias
+        value_type: long
+        attributes:
+          unit: min
+        identifier: daylight_saving_time_offset
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Time
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: end_hour_min
+      - name: Month
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: end_month
+      - name: Week
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: end_week_day
+      - name: Number of Week
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: end_week_num
+      - name: Time
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: start_hour_min
+      - name: Month
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: start_month
+      - name: Week
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: start_week_day
+      - name: Number of Week
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: start_week_num
+  - identifier: delete_schedule
+    name: Select Schedule
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Select Schedule
+        value_type: long
+        attributes:
+          enum:
+            '0': Schedule1
+            '1': Schedule2
+            '2': Schedule3
+            '3': Schedule4
+            '4': Schedule5
+            '5': Schedule6
+            '6': Schedule7
+            '7': Schedule8
+            '8': Schedule9
+            '9': Schedule10
+            '10': Schedule11
+            '11': Schedule12
+            '12': Schedule13
+            '13': Schedule14
+            '14': Schedule15
+            '15': Schedule16
+            '255': Reset All
+        identifier: type
+  - name: Device Status
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'Off'
+        'true': 'On'
+    identifier: device_status
+  - name: Ambient Temperature Display Enable
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: environment_temperature_display_enable
+  - identifier: heating_period_settings
+    name: Sub-command
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Sub-command
+        value_type: long
+        attributes:
+          enum:
+            '0': Non-heating Period Reporting Interval
+            '1': Non-heating Period Reporting Interval
+            '2': Non-heating Period Reporting Interval
+            '3': Non-heating Period Valve Status
+        identifier: command
+      - name: Heating End Day
+        value_type: long
+        identifier: heating_date_settings#end_day
+      - name: Heating End Month
+        value_type: long
+        identifier: heating_date_settings#end_mon
+      - name: Heating Start Day
+        value_type: long
+        identifier: heating_date_settings#start_day
+      - name: Heating Start Month
+        value_type: long
+        identifier: heating_date_settings#start_mon
+      - name: Heating Period Reporting Interval
+        value_type: long
+        attributes:
+          unit: min
+        identifier: heating_period_reporting_interval#minutes_of_time
+      - name: Heating Period Reporting Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: heating_period_reporting_interval#seconds_of_time
+      - name: Heating Period Reporting Interval Unit
+        value_type: long
+        attributes:
+          enum:
+            '0': second
+            '1': min
+        identifier: heating_period_reporting_interval#unit
+      - name: Non-heating Period Reporting Interval
+        value_type: long
+        attributes:
+          unit: min
+        identifier: non_heating_period_reporting_interval#minutes_of_time
+      - name: Non-heating Period Reporting Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: non_heating_period_reporting_interval#seconds_of_time
+      - name: Non-heating Period Reporting Interval Unit
+        value_type: long
+        attributes:
+          enum:
+            '0': second
+            '1': min
+        identifier: non_heating_period_reporting_interval#unit
+      - name: Non-heating Period Valve Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Fully Close
+            '1': Fully Open
+        identifier: valve_status_control
+  - identifier: historical_data_report
+    name: Historical Data Mode
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Historical Data Mode
+        value_type: long
+        attributes:
+          enum:
+            '0': target time
+            '1': historical time
+        identifier: mode
+      - name: Historical Data Timestamps
+        value_type: long
+        identifier: timestamp
+  - identifier: low_battery_alarm
+    name: Battery
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: value
+  - identifier: mandatory_heating_alarm
+    name: Battery
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: enter#battery_level
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: enter#current_valve_status
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: enter#environment_temperature
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: exit#battery_level
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: exit#current_valve_status
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: exit#environment_temperature
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '32': Forced Heating Exit
+            '33': Forced Heating Enter
+        identifier: type
+  - name: Forced Heating Enable
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: mandatory_heating_enable
+  - identifier: motor_calibration_result_report
+    name: Motor Calibration Status
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Motor Calibration Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Uncalibrated
+            '1': Calibration success
+            '2': Calibration failed
+            '3': Calibration failed
+            '4': Calibration failed
+        identifier: status
+  - identifier: motor_controllable_range
+    name: Motor Controllable Distance
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Motor Controllable Distance
+        value_type: double
+        attributes:
+          unit: mm
+        identifier: distance
+      - name: Motor Controllable Distance Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+  - name: Motor Position
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: motor_position
+  - name: Effective Stroke
+    type: property
+    access_mod: RW
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: motor_stroke_limit
+  - name: Motor Stroke
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: motor_total_stroke
+  - name: OEM ID
+    type: property
+    access_mod: RW
+    value_type: string
+    attributes:
+      max_length: 4
+    identifier: oem_id
+  - identifier: periodic_reporting
+    name: Battery
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: integrated_control_for_heating#battery_level
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: integrated_control_for_heating#current_valve_opening
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: integrated_control_for_heating#environment_temperature
+      - name: Target Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: integrated_control_for_heating#target_temperature
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: integrated_control_for_heating#target_valve_opening
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: non_heating_season#battery_level
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: non_heating_season#target_valve_opening
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: target_temperature_for_heating#battery_level
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: target_temperature_for_heating#current_valve_opening
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: target_temperature_for_heating#environment_temperature
+      - name: Target Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: target_temperature_for_heating#target_temperature
+      - name: Battery
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: target_valve_opening_for_heating#battery_level
+      - name: Current Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: target_valve_opening_for_heating#current_valve_opening
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: target_valve_opening_for_heating#environment_temperature
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: target_valve_opening_for_heating#target_valve_opening
+  - name: SN
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 16
+    identifier: product_sn
+  - name: Device Status Query
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: query_device_status
+  - name: Motor Stroke And Position Query
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: query_motor_stroke_position
+  - name: Random key
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': Disable
+        'true': Enable
+    identifier: random_key
+  - name: Reboot
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: reboot
+  - name: Network Reconnection
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: reconnect
+  - name: Request to Query All Configurations
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: request_query_all_configurations
+  - name: Reset
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: reset
+  - identifier: retrieve_historical_data_by_time_range
+    name: End Time
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: End Time
+        value_type: long
+        identifier: end_time
+      - name: Start Time
+        value_type: long
+        identifier: start_time
+  - identifier: retrieve_historical_data_by_time
+    name: Time Point
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Time Point
+        value_type: long
+        identifier: time
+  - identifier: set_occupancy_state
+    name: Occupancy Status
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Occupancy Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Unoccupied
+            '1': Occupied
+        identifier: state
+  - identifier: set_opening_window
+    name: Open Window Status
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Open Window Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Normal
+            '1': Open
+        identifier: state
+  - identifier: set_target_temperature
+    name: Temperature
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: value
+  - identifier: set_target_valve_opening_degree
+    name: Target Valve Opening
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: value
+  - identifier: set_temperature
+    name: Temperature
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: value
+  - identifier: set_time
+    name: Timestamp
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Timestamp
+        value_type: long
+        identifier: timestamp
+  - name: Stop Retrieval
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: stop_historical_data_retrieval
+  - name: Time Synchronize
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: synchronize_time
+  - name: Target Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: target_temperature
+  - identifier: temp_control
+    name: Sub-command
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Sub-command
+        value_type: long
+        attributes:
+          enum:
+            '0': Automatic Temperature Control
+            '1': Valve Opening Control
+            '2': Integrated Control
+            '3': Over-temperature Side Deadband
+            '4': Minimum of Target Temperature Adjustment Range
+            '5': Maximum of Target Temperature Adjustment Range
+            '6': Temperature Control Mode Settings
+        identifier: command
+      - name: Temperature Control Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Target Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: mode_settings#auto_control#target_temperature
+      - name: Target Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: mode_settings#intergrated_control#target_temp
+      - name: Temperature Control Mode
+        value_type: long
+        attributes:
+          enum:
+            '0': Automatic Temperature Control
+            '1': Valve Opening Control
+            '2': Integrated Control
+        identifier: mode_settings#mode
+      - name: Target Valve Opening
+        value_type: long
+        attributes:
+          unit: '%'
+        identifier: mode_settings#valve_control#target_valve_status
+      - name: Over-temperature Side Deadband
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: over_temperature_side_deadband
+      - name: Maximum of Target Temperature Adjustment Range
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: target_temperature_adjustment_range_max
+      - name: Minimum of Target Temperature Adjustment Range
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: target_temperature_adjustment_range_min
+      - name: Target Temperature Resolution
+        value_type: long
+        attributes:
+          enum:
+            '0': '0.5'
+            '1': '1'
+          unit: °C
+        identifier: target_temperature_resolution
+      - name: Under-temperature Side Deadband
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: under_temperature_side_deadband
+  - name: Target Valve Opening
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: target_valve_opening_degree
+  - name: Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: temperature
+  - identifier: temperature_alarm_settings
+    name: Enable
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Alarm Mode
+        value_type: long
+        attributes:
+          enum:
+            '0': Disable
+            '1': 'Condition: x<A'
+            '2': 'Condition: x>B'
+            '4': 'Condition: x<A or x>B'
+        identifier: threshold_condition
+      - name: High Temperature Threshold
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_max
+      - name: ​Low Temperature Threshold
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_min
+  - identifier: temperature_alarm
+    name: Temperature
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: lower_range_alarm_deactivation#temperature
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: lower_range_alarm_trigger#temperature
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: over_range_alarm_deactivation#temperature
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: over_range_alarm_trigger#temperature
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '16': Temperature Below Alarm Released
+            '17': Temperature Below Alarm
+            '18': Temperature Above Alarm Released
+            '19': Temperature Above Alarm
+        identifier: type
+  - identifier: temperature_calibration_settings
+    name: Calibration Value
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Calibration Value
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: calibration_value
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+  - identifier: temperature_source_settings
+    name: Timeout
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Timeout
+        value_type: long
+        attributes:
+          unit: min
+        identifier: external_ntc_reception#timeout
+      - name: External NTC Dropout Settings
+        value_type: long
+        attributes:
+          enum:
+            '0': Maintaining State Control
+            '1': Close the Valve
+            '2': Switch to Internal NTC Control
+        identifier: external_ntc_reception#timeout_response
+      - name: Timeout
+        value_type: long
+        attributes:
+          unit: min
+        identifier: lorawan_reception#timeout
+      - name: LoRa Receive Dropout Settings
+        value_type: long
+        attributes:
+          enum:
+            '0': Maintaining State Control
+            '1': Close the Valve
+            '2': Switch to Internal NTC Control
+        identifier: lorawan_reception#timeout_response
+      - name: Ambient Temperature Source
+        value_type: long
+        attributes:
+          enum:
+            '0': Internal NTC
+            '1': External NTC
+            '2': LoRa Receive
+        identifier: type
+  - name: Temperature Unit
+    type: property
+    access_mod: RW
+    value_type: long
+    attributes:
+      enum:
+        '0': ℃
+        '1': ℉
+    identifier: temperature_unit
+  - name: Time Zone
+    type: property
+    access_mod: RW
+    value_type: long
+    attributes:
+      enum:
+        '0': UTC(WET)
+        '60': UTC+1(CET)
+        '120': UTC+2(EET)
+        '180': UTC+3(MSK)
+        '210': UTC+3:30(IRST)
+        '240': UTC+4(GST)
+        '270': UTC+4:30(AFT)
+        '300': UTC+5(PKT)
+        '330': UTC+5:30(IST)
+        '345': UTC+5:45(NPT)
+        '360': UTC+6(BHT)
+        '390': UTC+6:30(MMT)
+        '420': UTC+7(ICT)
+        '480': UTC+8(CT/CST)
+        '540': UTC+9(JST)
+        '570': UTC+9:30(ACST)
+        '600': UTC+10(AEST)
+        '630': UTC+10:30(LHST)
+        '660': UTC+11(VUT)
+        '720': UTC+12(NZST)
+        '765': UTC+12:45(CHAST)
+        '780': UTC+13(PHOT)
+        '840': UTC+14(LINT)
+        '-720': UTC-12(IDLW)
+        '-660': UTC-11(SST)
+        '-600': UTC-10(HST)
+        '-570': UTC-9:30(MIT)
+        '-540': UTC-9(AKST)
+        '-480': UTC-8(PST)
+        '-420': UTC-7(MST)
+        '-360': UTC-6(CST)
+        '-300': UTC-5(EST)
+        '-240': UTC-4(AST)
+        '-210': UTC-3:30(NST)
+        '-180': UTC-3(BRT)
+        '-120': UTC-2(FNT)
+        '-60': UTC-1(CVT)
+    identifier: time_zone
+  - name: TSL Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 4
+    identifier: tsl_version
+  - name: Current Valve Opening
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: valve_opening_degree
+  - identifier: version
+    name: Firmware Version
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Firmware Version
+        value_type: string
+        attributes:
+          max_length: 12
+        identifier: firmware_version
+      - name: Hardware Version
+        value_type: string
+        attributes:
+          max_length: 4
+        identifier: hardware_version
+  - identifier: window_opening_alarm
+    name: Ambient Temperature
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: release#environment_temperature
+      - name: Open Window Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Normal
+            '1': Open
+        identifier: release#state
+      - name: Ambient Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: trigger#environment_temperature
+      - name: Open Window Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Normal
+            '1': Open
+        identifier: trigger#state
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '32': Open Window Release
+            '33': Open Window Trigger
+        identifier: type
+  - identifier: window_opening_detection_settings
+    name: Rate of Temperature Fall
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Rate of Temperature Fall
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: cooling_rate
+      - name: Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Stop Temperature Control
+        value_type: long
+        attributes:
+          unit: min
+        identifier: stop_temperature_control_time
+      - name: Open Window Valve Status
+        value_type: long
+        attributes:
+          enum:
+            '0': Remains Unchanged
+            '1': Close the Valve
+        identifier: valve_status
+codec:
+  id: default
+  ref: wt102/codec/device-codec.yaml

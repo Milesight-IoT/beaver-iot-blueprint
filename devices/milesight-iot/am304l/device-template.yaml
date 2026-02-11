@@ -1,0 +1,847 @@
+metadata:
+  lora_device_profile_class: ClassA-OTAA
+definition:
+  input:
+    type: object
+    properties:
+      - key: device_id
+        type: string
+        required: true
+        is_device_id: true
+      - key: temperature
+        type: double
+        entity_mapping: temperature
+      - key: humidity
+        type: double
+        entity_mapping: humidity
+      - key: pir.pir_status
+        type: long
+        entity_mapping: pir.pir_status
+      - key: pir.pir_count
+        type: long
+        entity_mapping: pir.pir_count
+      - key: als_level
+        type: long
+        entity_mapping: als_level
+      - key: Lux
+        type: long
+        entity_mapping: Lux
+      - key: alarm_reporting_times
+        type: long
+        entity_mapping: alarm_reporting_times
+      - key: alarm_deactivation_enable
+        type: boolean
+        entity_mapping: alarm_deactivation_enable
+      - key: pir_status_change.status
+        type: long
+        entity_mapping: pir_status_change.status
+      - key: temperature_collection_anomaly.type
+        type: long
+        entity_mapping: temperature_collection_anomaly.type
+      - key: humidity_collection_anomaly.type
+        type: long
+        entity_mapping: humidity_collection_anomaly.type
+      - key: illuminace_collection_anomaly.type
+        type: long
+        entity_mapping: illuminace_collection_anomaly.type
+      - key: Lux_collection_anomaly.type
+        type: long
+        entity_mapping: Lux_collection_anomaly.type
+      - key: temperature_alarm.temperature
+        type: double
+        entity_mapping: temperature_alarm.temperature
+      - key: temperature_alarm.alarm_type
+        type: long
+        entity_mapping: temperature_alarm.alarm_type
+      - key: Lux_alarm.Lux
+        type: long
+        entity_mapping: Lux_alarm.Lux
+      - key: Lux_alarm.alarm_type
+        type: long
+        entity_mapping: Lux_alarm.alarm_type
+      - key: historical_data_retrieval.timestamp
+        type: long
+        entity_mapping: historical_data_retrieval.timestamp
+      - key: historical_data_retrieval.temperature_type
+        type: long
+        entity_mapping: historical_data_retrieval.temperature_type
+      - key: historical_data_retrieval.temperature
+        type: double
+        entity_mapping: historical_data_retrieval.temperature
+      - key: historical_data_retrieval.humidity_type
+        type: long
+        entity_mapping: historical_data_retrieval.humidity_type
+      - key: historical_data_retrieval.humidity
+        type: double
+        entity_mapping: historical_data_retrieval.humidity
+      - key: historical_data_retrieval.pir_type
+        type: long
+        entity_mapping: historical_data_retrieval.pir_type
+      - key: historical_data_retrieval.pir_status
+        type: long
+        entity_mapping: historical_data_retrieval.pir_status
+      - key: historical_data_retrieval.pir_count
+        type: long
+        entity_mapping: historical_data_retrieval.pir_count
+      - key: historical_data_retrieval.als_level_type
+        type: long
+        entity_mapping: historical_data_retrieval.als_level_type
+      - key: historical_data_retrieval.als_level
+        type: long
+        entity_mapping: historical_data_retrieval.als_level
+      - key: historical_data_retrieval_Lux.timestamp
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.timestamp
+      - key: historical_data_retrieval_Lux.temperature_type
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.temperature_type
+      - key: historical_data_retrieval_Lux.temperature
+        type: double
+        entity_mapping: historical_data_retrieval_Lux.temperature
+      - key: historical_data_retrieval_Lux.humidity_type
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.humidity_type
+      - key: historical_data_retrieval_Lux.humidity
+        type: double
+        entity_mapping: historical_data_retrieval_Lux.humidity
+      - key: historical_data_retrieval_Lux.pir_type
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.pir_type
+      - key: historical_data_retrieval_Lux.pir_status
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.pir_status
+      - key: historical_data_retrieval_Lux.pir_count
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.pir_count
+      - key: historical_data_retrieval_Lux.Lux_type
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.Lux_type
+      - key: historical_data_retrieval_Lux.Lux
+        type: long
+        entity_mapping: historical_data_retrieval_Lux.Lux
+  output:
+    type: object
+    properties:
+      - key: reporting_interval.interval
+        type: long
+        entity_mapping: reporting_interval.interval
+      - key: collecting_interval.interval
+        type: long
+        entity_mapping: collecting_interval.interval
+      - key: alarm_reporting_times
+        type: long
+        entity_mapping: alarm_reporting_times
+      - key: alarm_deactivation_enable
+        type: boolean
+        entity_mapping: alarm_deactivation_enable
+      - key: temperature_unit.unit
+        type: long
+        entity_mapping: temperature_unit.unit
+      - key: led_mode
+        type: long
+        entity_mapping: led_mode
+      - key: button_lock.power_off
+        type: boolean
+        entity_mapping: button_lock.power_off
+      - key: button_lock.power_on
+        type: boolean
+        entity_mapping: button_lock.power_on
+      - key: temperature_alarm_rule.enable
+        type: boolean
+        entity_mapping: temperature_alarm_rule.enable
+      - key: temperature_alarm_rule.condition
+        type: long
+        entity_mapping: temperature_alarm_rule.condition
+      - key: temperature_alarm_rule.threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_max
+      - key: temperature_alarm_rule.threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_min
+      - key: pir_enable.enable
+        type: boolean
+        entity_mapping: pir_enable.enable
+      - key: pir_trigger_report.enable
+        type: boolean
+        entity_mapping: pir_trigger_report.enable
+      - key: pir_idle_report.enable
+        type: boolean
+        entity_mapping: pir_idle_report.enable
+      - key: pir_idle_interval
+        type: long
+        entity_mapping: pir_idle_interval
+      - key: illuminance_collecting_enable.enable
+        type: boolean
+        entity_mapping: illuminance_collecting_enable.enable
+      - key: illuminance_mode.mode
+        type: long
+        entity_mapping: illuminance_mode.mode
+      - key: illuminance_alarm_rule.enable
+        type: boolean
+        entity_mapping: illuminance_alarm_rule.enable
+      - key: illuminance_alarm_rule.dim_value
+        type: long
+        entity_mapping: illuminance_alarm_rule.dim_value
+      - key: illuminance_alarm_rule.bright_value
+        type: long
+        entity_mapping: illuminance_alarm_rule.bright_value
+      - key: temperature_calibration_settings.enable
+        type: boolean
+        entity_mapping: temperature_calibration_settings.enable
+      - key: temperature_calibration_settings.value
+        type: double
+        entity_mapping: temperature_calibration_settings.value
+      - key: humidity_calibration_settings.enable
+        type: boolean
+        entity_mapping: humidity_calibration_settings.enable
+      - key: humidity_calibration_settings.value
+        type: double
+        entity_mapping: humidity_calibration_settings.value
+      - key: d2d_sending.enable
+        type: boolean
+        entity_mapping: d2d_sending.enable
+      - key: d2d_sending.lora_uplink_enable
+        type: boolean
+        entity_mapping: d2d_sending.lora_uplink_enable
+      - key: d2d_sending.temperature_enable
+        type: boolean
+        entity_mapping: d2d_sending.temperature_enable
+      - key: d2d_sending.humidity_enable
+        type: boolean
+        entity_mapping: d2d_sending.humidity_enable
+      - key: d2d_master_enable
+        type: boolean
+        entity_mapping: d2d_master_enable
+      - key: data_storage_enable.enable
+        type: boolean
+        entity_mapping: data_storage_enable.enable
+      - key: retransmission_enable.enable
+        type: boolean
+        entity_mapping: retransmission_enable.enable
+      - key: retransmission_interval.interval
+        type: long
+        entity_mapping: retransmission_interval.interval
+      - key: retrival_interval.interval
+        type: long
+        entity_mapping: retrival_interval.interval
+initial_entities:
+  - name: Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: temperature
+  - name: Humidity
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: '%RH'
+    identifier: humidity
+  - identifier: pir
+    name: PIR Status
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: PIR Status
+        value_type: long
+        attributes:
+          enum:
+            '0': vacant
+            '1': trigger
+        identifier: pir_status
+      - name: PIR Count
+        value_type: long
+        identifier: pir_count
+  - name: Illuminance Level
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: als_level
+  - name: Illuminance Value
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: lx
+    identifier: Lux
+  - identifier: reporting_interval
+    name: Reporting Interval
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Reporting Interval
+        value_type: long
+        attributes:
+          unit: min
+        identifier: interval
+  - identifier: collecting_interval
+    name: Collecting Interval
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Collecting Interval
+        value_type: long
+        attributes:
+          unit: min
+        identifier: interval
+  - name: Alarm Reporting Times
+    type: property
+    access_mod: RW
+    value_type: long
+    identifier: alarm_reporting_times
+  - name: Alarm Dismiss Report
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': disable
+        'true': enable
+    identifier: alarm_deactivation_enable
+  - identifier: temperature_unit
+    name: Temperature Unit
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Temperature Unit
+        value_type: long
+        attributes:
+          enum:
+            '0': celsius
+            '1': fahrenheit
+        identifier: unit
+  - name: LED Indicator
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      enum:
+        '0': disable
+        '2': enable
+    identifier: led_mode
+  - identifier: button_lock
+    name: Power Off Lock
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Power Off Lock
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: power_off
+      - name: Power On Lock
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: power_on
+  - identifier: temperature_alarm_rule
+    name: Threshold Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Threshold Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Threshold Condition
+        value_type: long
+        attributes:
+          enum:
+            '1': 'condition: x<A'
+            '2': 'condition: x>B'
+            '3': 'condition: A<x<B'
+            '4': 'condition: x<A or x>B'
+        identifier: condition
+      - name: Value B
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_max
+      - name: Value A
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_min
+  - identifier: pir_enable
+    name: PIR Collecting Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: PIR Collecting Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - identifier: pir_trigger_report
+    name: PIR Trigger Reporting
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: PIR Trigger Reporting
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - identifier: pir_idle_report
+    name: PIR Vacant Reporting
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: PIR Vacant Reporting
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - name: Time To Report Vacancy
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      unit: s
+    identifier: pir_idle_interval
+  - identifier: illuminance_collecting_enable
+    name: Illuminance Collecting Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Illuminance Collecting Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - identifier: illuminance_mode
+    name: Illuminance Mode
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Illuminance Mode
+        value_type: long
+        attributes:
+          enum:
+            '0': illuminance level
+            '1': illuminance value
+        identifier: mode
+  - identifier: illuminance_alarm_rule
+    name: Illuminance Threshold Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Illuminance Threshold Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Dim,Below
+        value_type: long
+        attributes:
+          unit: lx
+        identifier: dim_value
+      - name: Bright,Above
+        value_type: long
+        attributes:
+          unit: lx
+        identifier: bright_value
+  - identifier: temperature_calibration_settings
+    name: Calibration Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Calibration Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Calibration Value
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: value
+  - identifier: humidity_calibration_settings
+    name: Calibration Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Calibration Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Calibration Value
+        value_type: double
+        attributes:
+          unit: '%RH'
+        identifier: value
+  - identifier: d2d_sending
+    name: D2D Data Transmission Enalbe
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: D2D Data Transmission Enalbe
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: LoRa Uplink
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: lora_uplink_enable
+      - name: Temperature
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: temperature_enable
+      - name: Humidity
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: humidity_enable
+  - name: D2D Controller Enable
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': disable
+        'true': enable
+    identifier: d2d_master_enable
+  - identifier: data_storage_enable
+    name: Data Storage Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Data Storage Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - identifier: retransmission_enable
+    name: Data Retransmission Enable
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Data Retransmission Enable
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - identifier: retransmission_interval
+    name: Retransmission Interval
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Retransmission Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: interval
+  - identifier: retrival_interval
+    name: Retrival Interval
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Retrival Interval
+        value_type: long
+        attributes:
+          unit: s
+        identifier: interval
+  - identifier: pir_status_change
+    name: PIR Status
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: PIR Status
+        value_type: long
+        attributes:
+          enum:
+            '0': vacant
+            '1': trigger
+        identifier: status
+  - identifier: temperature_collection_anomaly
+    name: Abnormal temperature
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Abnormal temperature
+        value_type: long
+        attributes:
+          enum:
+            '0': collect abnormal
+            '1': collect out of range
+        identifier: type
+  - identifier: humidity_collection_anomaly
+    name: Abnormal humidity
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Abnormal humidity
+        value_type: long
+        attributes:
+          enum:
+            '0': collect abnormal
+        identifier: type
+  - identifier: illuminace_collection_anomaly
+    name: Abnormal illuminace Level
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Abnormal illuminace Level
+        value_type: long
+        attributes:
+          enum:
+            '0': collect abnormal
+        identifier: type
+  - identifier: Lux_collection_anomaly
+    name: Abnormal illuminace Value
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Abnormal illuminace Value
+        value_type: long
+        attributes:
+          enum:
+            '0': collect abnormal
+            '1': collect out of range
+        identifier: type
+  - identifier: temperature_alarm
+    name: Temperature
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: temperature
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '16': below alarm released
+            '17': below alarm
+            '18': above alarm released
+            '19': above alarm
+            '20': within alarm released
+            '21': within alarm
+            '22': exceed tolerance alarm released
+            '23': exceed tolerance alarm
+        identifier: alarm_type
+  - identifier: Lux_alarm
+    name: Illuminace Value
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Illuminace Value
+        value_type: long
+        attributes:
+          unit: lx
+        identifier: Lux
+      - name: Alarm Type
+        value_type: long
+        attributes:
+          enum:
+            '16': dim
+            '17': bright
+        identifier: alarm_type
+  - identifier: historical_data_retrieval
+    name: Timestamp
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Timestamp
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+      - name: Temperature Type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: temperature_type
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: temperature
+      - name: Humidity type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: humidity_type
+      - name: Humidity
+        value_type: double
+        attributes:
+          unit: '%RH'
+        identifier: humidity
+      - name: PIR type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+        identifier: pir_type
+      - name: PIR Status
+        value_type: long
+        attributes:
+          enum:
+            '0': vacant
+            '1': trigger
+        identifier: pir_status
+      - name: PIR Count
+        value_type: long
+        identifier: pir_count
+      - name: Illuminance Level Type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: als_level_type
+      - name: Illuminance Level
+        value_type: long
+        identifier: als_level
+  - identifier: historical_data_retrieval_Lux
+    name: Timestamp
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Timestamp
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+      - name: Temperature type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: temperature_type
+      - name: Temperature
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: temperature
+      - name: Humidity Type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: humidity_type
+      - name: Humidity
+        value_type: double
+        attributes:
+          unit: '%RH'
+        identifier: humidity
+      - name: PIR Type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+        identifier: pir_type
+      - name: PIR Status
+        value_type: long
+        attributes:
+          enum:
+            '0': vacant
+            '1': trigger
+        identifier: pir_status
+      - name: PIR Count
+        value_type: long
+        identifier: pir_count
+      - name: Illuminace Value Type
+        value_type: long
+        attributes:
+          enum:
+            '0': data invalid
+            '1': data valid
+            '2': data out of range
+            '3': data collect abnormal
+        identifier: Lux_type
+      - name: Illuminace Value
+        value_type: long
+        attributes:
+          unit: lx
+        identifier: Lux
+codec:
+  id: default
+  ref: am304l/codec/device-codec.yaml

@@ -119,6 +119,12 @@ definition:
       - key: valve_1_task.valve_pulse
         type: long
         entity_mapping: valve_1_task.valve_pulse
+      - key: valve_1_task.special_task_mode
+        type: long
+        entity_mapping: valve_1_task.special_task_mode
+      - key: valve_1_task.start_time
+        type: long
+        entity_mapping: valve_1_task.start_time
       - key: valve_2_task.time_rule_enable
         type: boolean
         entity_mapping: valve_2_task.time_rule_enable
@@ -137,6 +143,36 @@ definition:
       - key: valve_2_task.valve_pulse
         type: long
         entity_mapping: valve_2_task.valve_pulse
+      - key: valve_2_task.special_task_mode
+        type: long
+        entity_mapping: valve_2_task.special_task_mode
+      - key: valve_2_task.start_time
+        type: long
+        entity_mapping: valve_2_task.start_time
+      - key: valve_all_task.time_rule_enable
+        type: boolean
+        entity_mapping: valve_all_task.time_rule_enable
+      - key: valve_all_task.pulse_rule_enable
+        type: boolean
+        entity_mapping: valve_all_task.pulse_rule_enable
+      - key: valve_all_task.sequence_id
+        type: long
+        entity_mapping: valve_all_task.sequence_id
+      - key: valve_all_task.duration
+        type: long
+        entity_mapping: valve_all_task.duration
+      - key: valve_all_task.valve_status
+        type: boolean
+        entity_mapping: valve_all_task.valve_status
+      - key: valve_all_task.valve_pulse
+        type: long
+        entity_mapping: valve_all_task.valve_pulse
+      - key: valve_all_task.special_task_mode
+        type: long
+        entity_mapping: valve_all_task.special_task_mode
+      - key: valve_all_task.start_time
+        type: long
+        entity_mapping: valve_all_task.start_time
       - key: pulse_filter_config.mode
         type: long
         entity_mapping: pulse_filter_config.mode
@@ -164,6 +200,84 @@ definition:
       - key: history_enable
         type: boolean
         entity_mapping: history_enable
+      - key: pressure_threshold_alarm.pressure_type
+        type: long
+        entity_mapping: pressure_threshold_alarm.pressure_type
+      - key: pressure_threshold_alarm.threshold_type
+        type: long
+        entity_mapping: pressure_threshold_alarm.threshold_type
+      - key: pressure_threshold_alarm.threshold_min
+        type: long
+        entity_mapping: pressure_threshold_alarm.threshold_min
+      - key: pressure_threshold_alarm.threshold_max
+        type: long
+        entity_mapping: pressure_threshold_alarm.threshold_max
+      - key: pressure_threshold_alarm.current_pressure
+        type: long
+        entity_mapping: pressure_threshold_alarm.current_pressure
+      - key: pressure_threshold_alarm.alarm_status
+        type: long
+        entity_mapping: pressure_threshold_alarm.alarm_status
+      - key: lorawan_class_switch_response.timestamp
+        type: long
+        entity_mapping: lorawan_class_switch_response.timestamp
+      - key: lorawan_class_switch_response.continuous
+        type: long
+        entity_mapping: lorawan_class_switch_response.continuous
+      - key: lorawan_class_switch_response.class_type
+        type: long
+        entity_mapping: lorawan_class_switch_response.class_type
+      - key: lorawan_class_switch_response.code
+        type: long
+        entity_mapping: lorawan_class_switch_response.code
+      - key: query_valve_task_status_response.index
+        type: long
+        entity_mapping: query_valve_task_status_response.index
+      - key: query_valve_task_status_response.code
+        type: long
+        entity_mapping: query_valve_task_status_response.code
+      - key: schedule_device_config_response.id
+        type: long
+        entity_mapping: schedule_device_config_response.id
+      - key: schedule_device_config_response.type
+        type: long
+        entity_mapping: schedule_device_config_response.type
+      - key: schedule_device_config_response.code
+        type: long
+        entity_mapping: schedule_device_config_response.code
+      - key: valve_1_task_status.task_status
+        type: long
+        entity_mapping: valve_1_task_status.task_status
+      - key: valve_1_task_status.real_status
+        type: long
+        entity_mapping: valve_1_task_status.real_status
+      - key: valve_1_task_status.cmd_status
+        type: long
+        entity_mapping: valve_1_task_status.cmd_status
+      - key: valve_2_task_status.task_status
+        type: long
+        entity_mapping: valve_2_task_status.task_status
+      - key: valve_2_task_status.real_status
+        type: long
+        entity_mapping: valve_2_task_status.real_status
+      - key: valve_2_task_status.cmd_status
+        type: long
+        entity_mapping: valve_2_task_status.cmd_status
+      - key: read_schedule_config_response.id
+        type: long
+        entity_mapping: read_schedule_config_response.id
+      - key: read_schedule_config_response.type
+        type: long
+        entity_mapping: read_schedule_config_response.type
+      - key: read_schedule_config_response.code
+        type: long
+        entity_mapping: read_schedule_config_response.code
+      - key: multicast_command_response.EUI
+        type: string
+        entity_mapping: multicast_command_response.EUI
+      - key: multicast_command_response.code
+        type: long
+        entity_mapping: multicast_command_response.code
   output:
     type: object
     properties:
@@ -233,6 +347,12 @@ definition:
       - key: valve_1_task.valve_pulse
         type: long
         entity_mapping: valve_1_task.valve_pulse
+      - key: valve_1_task.special_task_mode
+        type: long
+        entity_mapping: valve_1_task.special_task_mode
+      - key: valve_1_task.start_time
+        type: long
+        entity_mapping: valve_1_task.start_time
       - key: valve_2_task.time_rule_enable
         type: boolean
         entity_mapping: valve_2_task.time_rule_enable
@@ -251,6 +371,36 @@ definition:
       - key: valve_2_task.valve_pulse
         type: long
         entity_mapping: valve_2_task.valve_pulse
+      - key: valve_2_task.special_task_mode
+        type: long
+        entity_mapping: valve_2_task.special_task_mode
+      - key: valve_2_task.start_time
+        type: long
+        entity_mapping: valve_2_task.start_time
+      - key: valve_all_task.time_rule_enable
+        type: boolean
+        entity_mapping: valve_all_task.time_rule_enable
+      - key: valve_all_task.pulse_rule_enable
+        type: boolean
+        entity_mapping: valve_all_task.pulse_rule_enable
+      - key: valve_all_task.sequence_id
+        type: long
+        entity_mapping: valve_all_task.sequence_id
+      - key: valve_all_task.duration
+        type: long
+        entity_mapping: valve_all_task.duration
+      - key: valve_all_task.valve_status
+        type: boolean
+        entity_mapping: valve_all_task.valve_status
+      - key: valve_all_task.valve_pulse
+        type: long
+        entity_mapping: valve_all_task.valve_pulse
+      - key: valve_all_task.special_task_mode
+        type: long
+        entity_mapping: valve_all_task.special_task_mode
+      - key: valve_all_task.start_time
+        type: long
+        entity_mapping: valve_all_task.start_time
       - key: clear_valve_1_pulse
         type: boolean
         entity_mapping: clear_valve_1_pulse
@@ -296,6 +446,69 @@ definition:
       - key: stop_transmit
         type: boolean
         entity_mapping: stop_transmit
+      - key: lorawan_class_switch.timestamp
+        type: long
+        entity_mapping: lorawan_class_switch.timestamp
+      - key: lorawan_class_switch.continuous
+        type: long
+        entity_mapping: lorawan_class_switch.continuous
+      - key: lorawan_class_switch.class_type
+        type: long
+        entity_mapping: lorawan_class_switch.class_type
+      - key: query_valve_task_status.index
+        type: long
+        entity_mapping: query_valve_task_status.index
+      - key: schedule_device_config.id
+        type: long
+        entity_mapping: schedule_device_config.id
+      - key: schedule_device_config.type
+        type: long
+        entity_mapping: schedule_device_config.type
+      - key: schedule_device_config.timestamp
+        type: long
+        entity_mapping: schedule_device_config.timestamp
+      - key: schedule_device_config.continuous
+        type: long
+        entity_mapping: schedule_device_config.continuous
+      - key: schedule_device_config.channel_index
+        type: long
+        entity_mapping: schedule_device_config.channel_index
+      - key: schedule_device_config.frequency
+        type: long
+        entity_mapping: schedule_device_config.frequency
+      - key: ai_collection_config.id
+        type: long
+        entity_mapping: ai_collection_config.id
+      - key: ai_collection_config.enable
+        type: long
+        entity_mapping: ai_collection_config.enable
+      - key: ai_collection_config.collect
+        type: long
+        entity_mapping: ai_collection_config.collect
+      - key: ai_collection_config.collect_irrigation
+        type: long
+        entity_mapping: ai_collection_config.collect_irrigation
+      - key: ai_collection_config.open_delay_collect_time
+        type: long
+        entity_mapping: ai_collection_config.open_delay_collect_time
+      - key: read_schedule_config.id
+        type: long
+        entity_mapping: read_schedule_config.id
+      - key: read_schedule_config.type
+        type: long
+        entity_mapping: read_schedule_config.type
+      - key: multicast_command.channel
+        type: long
+        entity_mapping: multicast_command.channel
+      - key: multicast_command.time
+        type: long
+        entity_mapping: multicast_command.time
+      - key: multicast_command.len
+        type: long
+        entity_mapping: multicast_command.len
+      - key: multicast_command.data
+        type: string
+        entity_mapping: multicast_command.data
 initial_entities:
   - name: IPSO Version
     type: property
@@ -646,6 +859,17 @@ initial_entities:
       - name: Valve 1 Task (Valve Pulse)
         value_type: long
         identifier: valve_pulse
+      - name: Valve 1 Task (Special Task Mode)
+        value_type: long
+        attributes:
+          enum:
+            '0': normal
+            '1': enable_rain_stop
+            '2': disable_rain_stop
+        identifier: special_task_mode
+      - name: Valve 1 Task (Start Time)
+        value_type: long
+        identifier: start_time
   - identifier: valve_2_task
     name: Valve 2 Task (Time Rule Enable)
     type: property
@@ -684,6 +908,66 @@ initial_entities:
       - name: Valve 2 Task (Valve Pulse)
         value_type: long
         identifier: valve_pulse
+      - name: Valve 2 Task (Special Task Mode)
+        value_type: long
+        attributes:
+          enum:
+            '0': normal
+            '1': enable_rain_stop
+            '2': disable_rain_stop
+        identifier: special_task_mode
+      - name: Valve 2 Task (Start Time)
+        value_type: long
+        identifier: start_time
+  - identifier: valve_all_task
+    name: Valve All Task (Time Rule Enable)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Valve All Task (Time Rule Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: time_rule_enable
+      - name: Valve All Task (Pulse Rule Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: pulse_rule_enable
+      - name: Valve All Task (Sequence ID)
+        value_type: long
+        identifier: sequence_id
+      - name: Valve All Task (Duration)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: duration
+      - name: Valve All Task (Valve Status)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': close
+            'true': open
+        identifier: valve_status
+      - name: Valve All Task (Valve Pulse)
+        value_type: long
+        identifier: valve_pulse
+      - name: Valve All Task (Special Task Mode)
+        value_type: long
+        attributes:
+          enum:
+            '0': normal
+            '1': enable_rain_stop
+            '2': disable_rain_stop
+        identifier: special_task_mode
+      - name: Valve All Task (Start Time)
+        value_type: long
+        identifier: start_time
   - name: Clear Valve 1 Pulse
     type: service
     access_mod: W
@@ -805,6 +1089,371 @@ initial_entities:
         'false': 'no'
         'true': 'yes'
     identifier: stop_transmit
+  - identifier: pressure_threshold_alarm
+    name: Pressure Threshold Alarm (Pressure Type)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Pressure Threshold Alarm (Pressure Type)
+        value_type: long
+        attributes:
+          enum:
+            '0': always
+            '1': valve 1 open
+            '2': valve 2 open
+            '3': valve 1 open or valve 2 open
+        identifier: pressure_type
+      - name: Pressure Threshold Alarm (Threshold Type)
+        value_type: long
+        attributes:
+          enum:
+            '0': below
+            '1': above
+            '2': between
+            '3': outside
+        identifier: threshold_type
+      - name: Pressure Threshold Alarm (Min Threshold)
+        value_type: long
+        attributes:
+          unit: kPa
+        identifier: threshold_min
+      - name: Pressure Threshold Alarm (Max Threshold)
+        value_type: long
+        attributes:
+          unit: kPa
+        identifier: threshold_max
+      - name: Pressure Threshold Alarm (Current Pressure)
+        value_type: long
+        attributes:
+          unit: kPa
+        identifier: current_pressure
+      - name: Pressure Threshold Alarm (Alarm Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': trigger alarm
+            '1': release alarm
+        identifier: alarm_status
+  - identifier: lorawan_class_switch
+    name: LoRaWAN Class Switch (Timestamp)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: LoRaWAN Class Switch (Timestamp)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+      - name: LoRaWAN Class Switch (Continuous)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: continuous
+      - name: LoRaWAN Class Switch (Class Type)
+        value_type: long
+        attributes:
+          enum:
+            '0': class A
+            '1': class B
+            '2': class C
+            '3': class CtoB
+            '255': cancel
+        identifier: class_type
+  - identifier: lorawan_class_switch_response
+    name: LoRaWAN Class Switch Response (Timestamp)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: LoRaWAN Class Switch Response (Timestamp)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+      - name: LoRaWAN Class Switch Response (Continuous)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: continuous
+      - name: LoRaWAN Class Switch Response (Class Type)
+        value_type: long
+        attributes:
+          enum:
+            '0': class A
+            '1': class B
+            '2': class C
+            '3': class CtoB
+            '255': cancel
+        identifier: class_type
+      - name: LoRaWAN Class Switch Response (Response Code)
+        value_type: long
+        attributes:
+          enum:
+            '0': success
+            '1': not allowed
+            '2': invalid parameter
+            '16': continuous is 0, the device does not support
+            '17': continuous is greater than the maximum allowed by the device
+            '18': instruction expired (start time + continuous <= current time)
+            '255': other error
+        identifier: code
+  - identifier: query_valve_task_status
+    name: Query Valve Task Status (Valve Index)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Query Valve Task Status (Valve Index)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve 1
+            '1': valve 2
+        identifier: index
+  - identifier: query_valve_task_status_response
+    name: Query Valve Task Status Response (Valve Index)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Query Valve Task Status Response (Valve Index)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve 1
+            '1': valve 2
+        identifier: index
+      - name: Query Valve Task Status Response (Response Code)
+        value_type: long
+        attributes:
+          enum:
+            '0': success
+            '1': not allowed
+            '2': valve index out of range
+        identifier: code
+  - identifier: schedule_device_config
+    name: Schedule Device Config (Schedule ID)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Schedule Device Config (Schedule ID)
+        value_type: long
+        identifier: id
+      - name: Schedule Device Config (Config Type)
+        value_type: long
+        identifier: type
+      - name: Schedule Device Config (Timestamp)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+      - name: Schedule Device Config (Continuous)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: continuous
+      - name: Schedule Device Config (Channel Index)
+        value_type: long
+        identifier: channel_index
+      - name: Schedule Device Config (Frequency)
+        value_type: long
+        identifier: frequency
+  - identifier: schedule_device_config_response
+    name: Schedule Device Config Response (Schedule ID)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Schedule Device Config Response (Schedule ID)
+        value_type: long
+        identifier: id
+      - name: Schedule Device Config Response (Config Type)
+        value_type: long
+        identifier: type
+      - name: Schedule Device Config Response (Response Code)
+        value_type: long
+        attributes:
+          enum:
+            '0': schedule command executed successfully
+            '1': schedule task not found
+            '2': schedule command expired
+            '3': schedule command time invalid
+            '4': Lora channel parameter invalid
+            '5': Lora frequency parameter invalid
+            '6': unsupported parameter
+            '7': schedule time not reached
+            '8': task storage memory not enough
+            '9': schedule task already exists
+            '255': other error
+        identifier: code
+  - identifier: ai_collection_config
+    name: AI Collection Config (Collection ID)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: AI Collection Config (Collection ID)
+        value_type: long
+        identifier: id
+      - name: AI Collection Config (Enable)
+        value_type: long
+        attributes:
+          enum:
+            '0': disable
+            '1': enable
+        identifier: enable
+      - name: AI Collection Config (Non-irrigation Interval)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: collect
+      - name: AI Collection Config (Irrigation Interval)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: collect_irrigation
+      - name: AI Collection Config (Valve Open Delay Time)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: open_delay_collect_time
+  - identifier: valve_1_task_status
+    name: Valve 1 Task Status (Task Status)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Valve 1 Task Status (Task Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': free task
+            '1': normal local plan
+            '2': force local plan
+            '3': rain stop plan
+            '4': IPSO temporary control plan
+        identifier: task_status
+      - name: Valve 1 Task Status (Real Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve is currently closed
+            '1': valve is currently open
+        identifier: real_status
+      - name: Valve 1 Task Status (Command Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve is currently commanded to close
+            '1': valve is currently commanded to open
+        identifier: cmd_status
+  - identifier: valve_2_task_status
+    name: Valve 2 Task Status (Task Status)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Valve 2 Task Status (Task Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': free task
+            '1': normal local plan
+            '2': force local plan
+            '3': rain stop plan
+            '4': IPSO temporary control plan
+        identifier: task_status
+      - name: Valve 2 Task Status (Real Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve is currently closed
+            '1': valve is currently open
+        identifier: real_status
+      - name: Valve 2 Task Status (Command Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': valve is currently commanded to close
+            '1': valve is currently commanded to open
+        identifier: cmd_status
+  - identifier: read_schedule_config
+    name: Read Schedule Config (Schedule ID)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Read Schedule Config (Schedule ID)
+        value_type: long
+        identifier: id
+      - name: Read Schedule Config (Parameter Type)
+        value_type: long
+        identifier: type
+  - identifier: read_schedule_config_response
+    name: Read Schedule Config Response (Schedule ID)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Read Schedule Config Response (Schedule ID)
+        value_type: long
+        identifier: id
+      - name: Read Schedule Config Response (Parameter Type)
+        value_type: long
+        identifier: type
+      - name: Read Schedule Config Response (Response Code)
+        value_type: long
+        attributes:
+          enum:
+            '0': success
+            '1': not allowed
+            '2': schedule task not found
+        identifier: code
+  - identifier: multicast_command
+    name: Multicast Command (Channel)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Multicast Command (Channel)
+        value_type: long
+        identifier: channel
+      - name: Multicast Command (Response Time)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: time
+      - name: Multicast Command (Length)
+        value_type: long
+        identifier: len
+      - name: Multicast Command (Data Payload Hex)
+        value_type: string
+        attributes:
+          max_length: 200
+        identifier: data
+  - identifier: multicast_command_response
+    name: Multicast Command Response (EUI)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Multicast Command Response (EUI)
+        value_type: string
+        attributes:
+          max_length: 8
+        identifier: EUI
+      - name: Multicast Command Response (Response Code)
+        value_type: long
+        attributes:
+          enum:
+            '0': execute successfully
+            '1': not allowed
+            '2': service not supported
+            '255': other error
+        identifier: code
 codec:
   id: default
   ref: uc511_di/codec/device-codec.yaml
